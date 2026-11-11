@@ -1,0 +1,1106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05090e">
+<meta name="description" content="The Franklin Expedition of 1845: Erebus and Terror, 129 men, the Northwest Passage. Chronicle, map, the Victory Point note, the searches, and the twenty-first-century discoveries.">
+<title>The Franklin Expedition · 1845 · Two Ships and 129 Names</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+<style>:root{
+  --ink:#05090e; --hull:#0a131b; --deep:#0f1e29; --steel:#1a3140;
+  --line:#24404f; --frost:#8ec2da; --mist:#a9bcc7; --ice:#e9f1f5;
+  --brass:#c9973f; --copper:#b06a44; --rust:#b4483c; --moss:#7f9270;
+  --display:"Playfair Display",Georgia,serif;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --hand:"Caveat","Segoe Script",cursive;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:70px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--ice);font-family:var(--sans);font-weight:350;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--brass);color:var(--ink)}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#070d13}
+::-webkit-scrollbar-thumb{background:#1e3947;border:2px solid #070d13}
+::-webkit-scrollbar-thumb:hover{background:var(--steel)}
+
+.wrap{max-width:1400px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+section{padding:clamp(80px,10vw,128px) 0;border-top:1px solid rgba(36,64,79,.5);position:relative}
+.label{font-family:var(--mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase}
+.mono{font-family:var(--mono)}
+.brass{color:var(--brass)} .frost{color:var(--frost)} .mist{color:var(--mist)} .dim{color:rgba(169,188,199,.5)}
+.serif{font-family:var(--display)}
+.italic{font-style:italic}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;margin:0}
+p{margin:0}
+.lead{max-width:680px;margin-top:24px;font-size:clamp(16px,1.3vw,18px);line-height:1.72;color:var(--mist)}
+.h2{margin-top:18px;font-size:clamp(36px,5.5vw,68px);line-height:1.05;letter-spacing:-.01em;font-weight:600}
+.h3{font-size:clamp(28px,3vw,40px);line-height:1.15}
+.rule{height:1px;background:linear-gradient(90deg,var(--line),rgba(36,64,79,.3),transparent)}
+.divider{border-bottom:1px solid rgba(36,64,79,.6);padding-bottom:16px}
+.kicker{display:flex;align-items:center;gap:16px;color:rgba(142,194,218,.7)}
+.kicker span:first-child{color:var(--brass)}
+.kicker i{display:block;width:40px;height:1px;background:var(--line);font-style:normal}
+.grid12{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(24px,4vw,48px)}
+.c5{grid-column:span 5}.c7{grid-column:span 7}.c8{grid-column:span 8}.c4{grid-column:span 4}.c3{grid-column:span 3}.c6{grid-column:span 6}
+@media(max-width:1000px){.grid12{grid-template-columns:1fr}.c3,.c4,.c5,.c6,.c7,.c8{grid-column:1/-1}}
+
+/* atmosphere */
+#atmo{position:fixed;inset:0;z-index:30;pointer-events:none;overflow:hidden}
+#atmo .sky{position:absolute;inset:0 0 auto;height:45vh;opacity:.6;background:radial-gradient(120% 100% at 20% 0%,rgba(56,110,140,.20),transparent 60%)}
+#atmo canvas{position:absolute;inset:0;width:100%;height:100%}
+#atmo .vig{position:absolute;inset:0;background:radial-gradient(130% 100% at 50% 40%,transparent 55%,rgba(3,6,10,.55) 100%)}
+.grain{position:relative;isolation:isolate}
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.3;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.gridbg{background-image:linear-gradient(rgba(142,194,218,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(142,194,218,.055) 1px,transparent 1px);background-size:48px 48px}
+
+/* header */
+header#hdr{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .5s,border-color .5s;border-bottom:1px solid transparent}
+header#hdr.on{background:rgba(5,9,14,.93);backdrop-filter:blur(12px);border-color:rgba(36,64,79,.6)}
+#bar{height:2px;background:rgba(36,64,79,.35)}
+#bar div{height:2px;width:0;background:linear-gradient(90deg,var(--brass),var(--frost),var(--brass))}
+.hrow{display:flex;align-items:center;gap:16px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0;font-family:var(--display);font-size:19px;font-weight:700}
+.brand svg{color:var(--brass);transition:transform .7s}
+.brand:hover svg{transform:rotate(180deg)}
+.brand small{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.2em;color:rgba(142,194,218,.7);margin-left:8px}
+nav{margin-left:auto;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{position:relative;flex-shrink:0;padding:8px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(169,188,199,.7);transition:color .3s}
+nav a:hover,nav a.active{color:var(--brass)}
+nav a::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:1px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav a.active::after{transform:scaleX(1)}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding-top:110px;padding-bottom:28px;border:0;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-1}
+.hero-bg img{height:100%;width:100%;object-fit:cover;opacity:.45;filter:saturate(.55) contrast(1.05)}
+.hero-bg .ov1{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,9,14,.85),rgba(5,9,14,.6),var(--ink))}
+.hero-bg .ov2{position:absolute;inset:0;background:linear-gradient(90deg,var(--ink),rgba(5,9,14,.45),transparent)}
+.hero-bg .ov3{position:absolute;inset:0;opacity:.4}
+.hero .yearghost{position:absolute;right:-3vw;bottom:6%;z-index:-1;font-family:var(--display);font-size:26vw;font-weight:900;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(142,194,218,.13);pointer-events:none}
+.hero h1{font-size:clamp(46px,9vw,120px);line-height:.85;font-weight:900;letter-spacing:-.025em;margin-top:20px}
+.hero h1 small{display:block;font-size:clamp(38px,6vw,88px);font-weight:400;font-style:italic;color:var(--mist);letter-spacing:0}
+.hero .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:720px;margin-top:32px}
+.hero .cols p{font-size:16px;line-height:1.7;color:var(--mist)}
+.hero .cols strong{color:var(--ice)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:14px 24px;border:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);transition:.3s;background:transparent}
+.btn:hover{border-color:var(--frost);color:var(--ice)}
+.btn.gold{border-color:rgba(201,151,63,.7);background:rgba(201,151,63,.1);color:var(--brass)}
+.btn.gold:hover{background:var(--brass);color:var(--ink)}
+.ledger{border-top:1px solid rgba(36,64,79,.7);padding:18px 0;position:relative}
+.ledger::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:var(--brass);transition:width .7s}
+.ledger:hover::before{width:100%}
+.ledger .num{font-family:var(--display);font-size:clamp(52px,6vw,76px);font-weight:900;line-height:1;color:var(--ice);transition:color .4s}
+.ledger:hover .num{color:var(--brass)}
+.ledger .lab{margin-left:14px}
+.ledger p{margin-top:8px;max-width:26ch;font-size:14px;line-height:1.4;color:rgba(169,188,199,.7)}
+.journal{border-top:1px solid rgba(36,64,79,.6);padding-top:18px;display:flex;gap:20px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
+.jdots{display:flex;gap:6px}
+.jdots button{width:24px;height:6px;border:0;background:var(--line);transition:background .3s;padding:0}
+.jdots button.on{background:var(--brass)}
+#jline{font-family:var(--mono);font-size:13px;color:rgba(142,194,218,.9);min-height:20px}
+#jline b{color:var(--brass);margin-right:12px;font-weight:500}
+.down{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(169,188,199,.6)}
+.down i{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;font-style:normal;transition:.3s}
+.down:hover i{border-color:var(--brass)}
+.down:hover{color:var(--ice)}
+.down svg{animation:float 4s ease-in-out infinite}
+
+/* generic cards */
+.card{border:1px solid rgba(36,64,79,.7);background:rgba(10,19,27,.6);padding:24px}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(36,64,79,.7);padding:10px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);background:transparent;transition:.3s}
+.chip:hover{border-color:rgba(142,194,218,.6);background:rgba(142,194,218,.05);color:var(--ice)}
+.chip.on{border-color:rgba(201,151,63,.7);background:rgba(201,151,63,.15);color:var(--brass)}
+.chip small{font-size:10px;opacity:.6}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(36,64,79,.4);border:1px solid rgba(36,64,79,.7);border-top:0}
+.specs>div{background:var(--hull);padding:20px;transition:background .4s}
+.specs>div:hover{background:var(--deep)}
+.specs p:last-child{margin-top:8px;font-size:15px;line-height:1.4}
+.shippick{display:flex;gap:16px;width:100%;text-align:left;padding:12px;border:1px solid rgba(36,64,79,.7);background:transparent;transition:.4s;align-items:stretch}
+.shippick+.shippick{margin-top:12px}
+.shippick.on{border-color:rgba(201,151,63,.7);background:rgba(201,151,63,.07)}
+.shippick img{width:96px;height:112px;object-fit:cover;flex-shrink:0;opacity:.55;filter:saturate(0);transition:.6s}
+.shippick.on img,.shippick:hover img{opacity:1;filter:none}
+.shippick h3{font-size:30px;line-height:1;margin-top:4px}
+.shippick .meta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:rgba(142,194,218,.7);margin-top:8px}
+.shipframe{position:relative;overflow:hidden;border:1px solid rgba(36,64,79,.7)}
+.shipframe img{height:clamp(300px,38vw,420px);width:100%;object-fit:cover}
+.shipframe::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--hull),rgba(10,19,27,.2),transparent)}
+.shipframe .cap{position:absolute;inset:auto 0 0;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:28px}
+.shipframe h3{font-size:clamp(42px,6vw,64px);font-weight:900;line-height:1}
+.mods{display:grid;gap:0 48px;grid-template-columns:repeat(2,1fr)}
+.mod{display:flex;gap:18px;border-bottom:1px solid rgba(36,64,79,.4);padding:22px 0}
+.mod:hover{border-color:rgba(142,194,218,.4)}
+.mod .n{font-family:var(--mono);font-size:12px;color:rgba(201,151,63,.6);margin-top:4px}
+.mod svg{color:rgba(142,194,218,.7);flex-shrink:0;margin-top:4px}
+.mod h4{font-size:20px}
+.mod p{margin-top:8px;font-size:14px;line-height:1.65;color:var(--mist)}
+@media(max-width:760px){.mods,.specs{grid-template-columns:1fr}}
+
+/* timeline */
+.tl-filter{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.tl-sticky{position:sticky;top:100px}
+.tl-sticky .big{font-family:var(--display);font-size:clamp(60px,8vw,100px);font-weight:900;line-height:1}
+.tl-track{position:relative}
+.tl-track::before{content:"";position:absolute;left:calc(112px + 7px);top:0;bottom:0;width:1px;background:rgba(36,64,79,.6)}
+@media(max-width:640px){.tl-track::before{left:7px}}
+.tl-item{position:relative;display:grid;grid-template-columns:112px 1fr;gap:16px;transition:background .4s}
+.tl-item .date{text-align:right;padding-top:26px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:rgba(169,188,199,.5)}
+.tl-item .body{padding:24px 16px 24px 40px;position:relative}
+.tl-item .body::before{content:"";position:absolute;left:-7px;top:32px;width:15px;height:15px;border:1px solid var(--line);background:var(--hull);border-radius:50%;transform:translateX(-50%);transition:.4s}
+.tl-item.on .body{background:rgba(15,30,41,.5)}
+.tl-item.on .body::before{border-color:var(--brass);background:rgba(201,151,63,.25);box-shadow:0 0 0 4px rgba(201,151,63,.08)}
+.tl-item.on .date{color:var(--brass)}
+.tl-item h3{font-size:clamp(22px,2.5vw,30px);line-height:1.2}
+.tl-item .txt{margin-top:12px;max-width:780px;font-size:15px;line-height:1.72;color:var(--mist)}
+.tl-item .stat{display:flex;align-items:baseline;gap:8px;border:1px solid var(--line);padding:6px 12px}
+.tl-item .stat b{font-family:var(--display);font-size:24px;color:var(--brass)}
+.tl-item .stat span{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(169,188,199,.7)}
+.tl-item .maplink{margin-top:14px;border:0;border-bottom:1px solid transparent;background:none;padding:0 0 2px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(142,194,218,.8)}
+.tl-item .maplink:hover{border-color:var(--frost);color:var(--frost)}
+.tl-progress{width:1px;height:180px;background:rgba(36,64,79,.7);margin-top:28px}
+.tl-progress div{width:1px;background:linear-gradient(180deg,var(--brass),var(--frost));height:0}
+@media(max-width:640px){.tl-item{grid-template-columns:1fr}.tl-item .date{display:none}.tl-item .body{padding-left:28px}.tl-item .body::before{left:0}}
+
+/* map */
+.layerbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.layerbtn{flex:1 1 210px;display:flex;gap:12px;text-align:left;padding:14px;border:1px solid rgba(36,64,79,.7);background:transparent;transition:.35s}
+.layerbtn.on{border-color:rgba(201,151,63,.7);background:rgba(201,151,63,.1)}
+.layerbtn svg{margin-top:2px;color:rgba(169,188,199,.7);flex-shrink:0}
+.layerbtn.on svg{color:var(--brass)}
+.layerbtn b{display:block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.layerbtn.on b{color:var(--brass)}
+.layerbtn small{display:block;margin-top:4px;font-size:12px;color:rgba(169,188,199,.6)}
+.chartbox{border:1px solid rgba(36,64,79,.7);background:rgba(15,30,41,.4)}
+.chartbox .top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(36,64,79,.6);padding:11px 16px}
+.chartbox svg{display:block;width:100%;height:auto}
+.chartscroll{overflow-x:auto}
+.chartscroll>div{min-width:860px}
+@media(min-width:640px){.chartscroll>div{min-width:0}}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;border-top:1px solid rgba(36,64,79,.6);padding:12px 16px}
+.legend span{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(169,188,199,.6)}
+.mapcard{border:1px solid rgba(36,64,79,.7);background:rgba(15,30,41,.5);padding:24px}
+.mapcard h3{font-size:30px;line-height:1.15;margin-top:12px}
+.mapcard p{margin-top:14px;font-size:14px;line-height:1.7;color:var(--mist)}
+.pointlist{border:1px solid var(--line)}
+.pointlist .h{border-bottom:1px solid rgba(36,64,79,.6);padding:11px 16px}
+.pointlist ul{list-style:none;margin:0;padding:0;max-height:320px;overflow-y:auto}
+.pointlist button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;text-align:left;border:0;border-bottom:1px solid rgba(36,64,79,.4);background:none;padding:12px 16px;color:var(--mist);font-size:14px;transition:.3s}
+.pointlist button:hover{background:rgba(142,194,218,.05);color:var(--ice)}
+.pointlist button.on{background:rgba(201,151,63,.1);color:var(--brass)}
+.pointlist button small{font-family:var(--mono);font-size:10px;white-space:nowrap;color:rgba(169,188,199,.5)}
+
+/* note */
+.paper{position:relative;padding:clamp(24px,4vw,40px);color:#2b2118;background-color:#ddd3bd;background-image:radial-gradient(ellipse at 18% 12%,rgba(120,92,48,.22),transparent 55%),radial-gradient(ellipse at 88% 82%,rgba(96,70,34,.26),transparent 50%),radial-gradient(circle at 60% 40%,rgba(255,250,232,.55),transparent 60%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23p)' opacity='.22'/%3E%3C/svg%3E");box-shadow:0 30px 70px -20px rgba(0,0,0,.85);transform:rotate(-.5deg)}
+.paper .head,.paper .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-color:rgba(43,33,24,.25);font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#5b4a33}
+.paper .head{border-bottom:1px solid rgba(43,33,24,.25);padding-bottom:12px;margin-bottom:24px}
+.paper .foot{border-top:1px solid rgba(43,33,24,.25);padding-top:12px;margin-top:32px}
+.paper .body{font-family:var(--hand);font-size:clamp(21px,2.2vw,26px);line-height:1.5}
+.paper .body p+p{margin-top:14px}
+.paper .sign{text-align:right;font-size:.9em;font-style:italic;margin-top:10px}
+.paper .margin{margin-top:28px;border-top:2px dashed rgba(138,59,44,.4);padding-top:20px;color:#7a2f22;transition:opacity .7s,filter .7s}
+.paper .margin.off{opacity:.25;filter:blur(1.5px)}
+.paper mark{cursor:help;background:transparent;color:inherit;text-decoration:underline dotted;text-underline-offset:4px;transition:background .3s}
+.paper mark:hover,.paper mark.on{background:rgba(201,151,63,.35)}
+.paper mark sup{font-family:var(--sans);font-size:10px;color:#8a5a1c;font-weight:700}
+.notes li{list-style:none}
+.notes button{display:flex;gap:12px;width:100%;text-align:left;border:1px solid rgba(36,64,79,.6);background:none;padding:12px 16px;color:var(--mist);font-size:14px;transition:.35s;margin-bottom:8px}
+.notes button:hover{border-color:rgba(142,194,218,.5);background:rgba(142,194,218,.04)}
+.notes button.on{border-color:rgba(201,151,63,.7);background:rgba(201,151,63,.1);color:var(--ice)}
+.notes .n{flex-shrink:0;display:grid;place-items:center;width:20px;height:20px;border:1px solid var(--line);border-radius:50%;font-family:var(--mono);font-size:10px}
+.notes button.on .n{border-color:var(--brass);color:var(--brass)}
+.notecard{border:1px solid var(--line);background:rgba(10,19,27,.7);padding:24px;margin-top:24px}
+.notecard h3{font-size:24px;margin-top:12px}
+.notecard p{margin-top:12px;font-size:14px;line-height:1.7;color:var(--mist)}
+
+/* crew */
+.donut{width:240px;height:240px;border-radius:50%;margin:20px auto 0;display:grid;place-items:center;position:relative;background:conic-gradient(var(--frost) 0 2.33%,var(--brass) 2.33% 18.6%,var(--rust) 18.6% 100%)}
+.donut::before{content:"";position:absolute;inset:32px;border-radius:50%;background:var(--hull)}
+.donut div{position:relative;text-align:center}
+.donut b{display:block;font-family:var(--display);font-size:52px;line-height:1}
+.donut span{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:rgba(169,188,199,.7)}
+.fates{margin-top:24px}
+.fates li{display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;border-top:1px solid rgba(36,64,79,.4);padding:10px 0}
+.fates i{display:inline-block;width:10px;height:10px;margin-right:10px}
+.fates b{font-family:var(--display);font-size:20px}
+.bars{margin-top:24px}
+.bar{display:grid;grid-template-columns:180px 1fr 55px;gap:12px;align-items:center;margin-bottom:14px;font-size:12px;color:var(--mist)}
+.bar .fill{height:22px;background:rgba(142,194,218,.08);position:relative}
+.bar .fill i{display:block;height:100%;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+.bar b{font-family:var(--mono);font-size:12px;color:var(--ice);text-align:right}
+@media(max-width:520px){.bar{grid-template-columns:1fr 45px}.bar .fill{grid-column:1/-1;grid-row:2}.bar b{grid-column:2;grid-row:1}}
+.searchbox{position:relative;margin-top:24px}
+.searchbox svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:rgba(169,188,199,.5)}
+.searchbox input{width:100%;background:rgba(10,19,27,.6);border:1px solid rgba(36,64,79,.7);padding:14px 44px;color:var(--ice);font-size:14px}
+.searchbox input::placeholder{color:rgba(169,188,199,.4)}
+.searchbox input:focus{border-color:rgba(201,151,63,.6);outline:none}
+.searchbox button{position:absolute;right:12px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--mist)}
+.filterrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px}
+.filterrow>span:first-child{min-width:90px}
+.crewgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(36,64,79,.4);border:1px solid rgba(36,64,79,.4);margin-top:28px}
+@media(max-width:760px){.crewgrid{grid-template-columns:1fr}}
+.crew{background:var(--ink);padding:20px;position:relative;transition:background .5s}
+.crew:hover{background:var(--deep)}
+.crew::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--brass);transform:scaleY(0);transition:transform .5s}
+.crew:hover::before{transform:scaleY(1)}
+.crew h4{font-size:20px;line-height:1.2}
+.crew:hover h4{color:var(--brass)}
+.crew .lat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:rgba(169,188,199,.5);margin-top:2px}
+.crew .tag{position:absolute;top:20px;right:20px;border:1px solid rgba(142,194,218,.4);padding:4px 8px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--frost)}
+.crew .tag.moss{border-color:rgba(127,146,112,.4);color:var(--moss)}
+.crew .role{margin-top:12px;font-size:14px;color:rgba(169,188,199,.9)}
+.crew .fate{margin-top:8px;font-size:14px;line-height:1.6;color:rgba(169,188,199,.65)}
+.crew .badge{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(201,151,63,.4);padding:4px 8px;margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+.empty{border:1px dashed var(--line);padding:48px;text-align:center;margin-top:28px}
+.empty h3{font-size:26px;margin-top:12px}
+.empty p{margin-top:8px;font-size:14px;color:var(--mist)}
+
+/* search section */
+.exped{display:grid;grid-template-columns:128px 1fr;gap:12px;border-bottom:1px solid rgba(36,64,79,.4);padding:24px 0;transition:background .5s}
+.exped:hover{background:rgba(15,30,41,.4)}
+.exped h3{font-size:24px}
+.exped .txt{margin-top:8px;max-width:680px;font-size:15px;line-height:1.7;color:var(--mist)}
+.exped .shipname{font-family:var(--mono);font-size:11px;color:rgba(169,188,199,.6)}
+@media(max-width:640px){.exped{grid-template-columns:1fr}}
+.quote{border:1px solid rgba(180,72,60,.4);background:rgba(180,72,60,.07);padding:24px;margin-top:24px}
+.testgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(36,64,79,.4);border:1px solid rgba(36,64,79,.4)}
+@media(max-width:760px){.testgrid{grid-template-columns:1fr}}
+.testgrid>div{background:var(--hull);padding:24px;transition:background .5s}
+.testgrid>div:hover{background:var(--deep)}
+.testgrid hr{width:40px;border:0;height:1px;background:rgba(201,151,63,.6);margin:24px 0 0;transition:width .7s}
+.testgrid>div:hover hr{width:100%}
+
+/* mystery */
+.march{position:relative;isolation:isolate;overflow:hidden;border:0}
+.march>img{position:absolute;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;opacity:.35;filter:saturate(.5)}
+.march .ov{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--ink),rgba(5,9,14,.7),var(--ink))}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(36,64,79,.4);margin-top:56px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stats>div{background:rgba(5,9,14,.8);padding:24px;transition:background .5s}
+.stats>div:hover{background:rgba(15,30,41,.85)}
+.stats b{font-family:var(--display);font-size:clamp(40px,5vw,60px);font-weight:900;line-height:1}
+.stats>div:hover b{color:var(--brass)}
+.acc{border-bottom:1px solid rgba(36,64,79,.4)}
+.acc>button{display:flex;align-items:center;gap:16px;width:100%;text-align:left;background:none;border:0;padding:24px 0;color:var(--ice)}
+.acc .n{font-family:var(--mono);font-size:12px;color:rgba(201,151,63,.6)}
+.acc .pm{display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--line);flex-shrink:0;font-family:var(--mono);font-size:16px;color:var(--mist);transition:.3s}
+.acc>button:hover .pm{border-color:var(--brass);color:var(--brass)}
+.acc .t{flex:1;min-width:0;font-family:var(--display);font-size:clamp(22px,2.6vw,30px);font-weight:600;line-height:1.2}
+.acc .t small{display:block;font-family:var(--sans);font-size:14px;font-weight:350;color:rgba(169,188,199,.7);margin-top:4px}
+.acc .v{display:inline-flex;align-items:center;gap:6px;border:1px solid;padding:6px 12px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.acc .v.rust{border-color:rgba(180,72,60,.5);color:var(--rust)}
+.acc .v.copper{border-color:rgba(176,106,68,.5);color:var(--copper)}
+.acc .v.frost{border-color:rgba(142,194,218,.5);color:var(--frost)}
+.acc .v.gold{border-color:rgba(201,151,63,.5);color:var(--brass)}
+.acc .chev{color:var(--mist);transition:transform .5s}
+.acc.open .chev{transform:rotate(180deg);color:var(--brass)}
+.acc.open .t{color:var(--brass)}
+.acc .panel{max-height:0;overflow:hidden;opacity:0;transition:max-height .6s cubic-bezier(.16,1,.3,1),opacity .5s}
+.acc.open .panel{max-height:420px;opacity:1}
+.acc .panel .inner{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:0 0 32px 64px}
+@media(max-width:760px){.acc .panel .inner{grid-template-columns:1fr;padding-left:0}.acc .v{display:none}}
+.acc .panel .inner>div{border-left:2px solid;padding-left:20px}
+.acc .panel .inner p{font-size:15px;line-height:1.7;color:var(--mist);margin-top:8px}
+.qgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(36,64,79,.4);border:1px solid rgba(36,64,79,.4)}
+@media(max-width:760px){.qgrid{grid-template-columns:1fr}}
+.qgrid>div{display:flex;gap:16px;background:var(--ink);padding:24px;transition:background .5s}
+.qgrid>div:hover{background:var(--deep)}
+.qgrid p{font-family:var(--display);font-size:18px;line-height:1.4}
+
+/* footer */
+footer{border-top:1px solid rgba(36,64,79,.6);background:var(--hull);position:relative}
+footer .wrap{padding-top:80px;padding-bottom:80px}
+footer a.ext{display:inline-flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--frost);transition:color .3s}
+footer a.ext:hover{color:var(--brass)}
+footer li{border-bottom:1px solid rgba(36,64,79,.4);padding-bottom:12px;margin-bottom:16px;list-style:none}
+footer ul{padding:0;margin:20px 0 0}
+footer .fine{border:1px solid rgba(36,64,79,.6);padding:16px;margin-top:32px;font-family:var(--mono);font-size:10px;line-height:1.7;letter-spacing:.1em;text-transform:uppercase;color:rgba(169,188,199,.5)}
+footer .bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;border-top:1px solid rgba(36,64,79,.4);margin-top:64px;padding-top:24px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(169,188,199,.4)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.fadein{animation:fadein .5s ease both}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes dash{to{stroke-dashoffset:-32}}
+@keyframes pulse{0%{transform:scale(.6);opacity:.85}100%{transform:scale(2.6);opacity:0}}
+.route-dash{stroke-dasharray:7 9;animation:dash 2.4s linear infinite}
+.pulse{animation:pulse 2.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1!important;transform:none!important;transition:none}.route-dash,.pulse,.down svg{animation:none}}
+</style>
+</head>
+<body>
+<div id="atmo" aria-hidden="true"><div class="sky"></div><canvas id="snow"></canvas><div class="vig"></div></div>
+
+<header id="hdr">
+  <div id="bar"><div></div></div>
+  <div class="wrap hrow">
+    <a class="brand" href="#top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/></svg>
+      Franklin<small>1845</small>
+    </a>
+    <nav id="nav">
+      <a href="#ships">Ships</a><a href="#timeline">Timeline</a><a href="#map">Map</a>
+      <a href="#note">The Note</a><a href="#crew">People</a><a href="#search">Searches</a><a href="#mystery">Mystery</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section id="top" class="hero grain">
+  <div class="hero-bg"><img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230b1a25'/%3E%3Cstop offset='1' stop-color='%2305090e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='1000' fill='url(%23a)'/%3E%3Cpath d='M0 720 Q300 660 640 700 T1200 680 T1600 700 L1600 1000 L0 1000Z' fill='%23152a36'/%3E%3Cpath d='M0 790 Q420 730 820 790 T1600 760 L1600 1000 L0 1000Z' fill='%23e9f1f5' opacity='.15'/%3E%3Cg stroke='%238ec2da' stroke-opacity='.25' fill='none'%3E%3Cpath d='M300 780 L520 560 L740 780Z'/%3E%3Cpath d='M900 800 L1120 590 L1340 800Z'/%3E%3C/g%3E%3C/svg%3E" alt="Two sailing ships trapped in Arctic ice">
+    <div class="ov1"></div><div class="ov2"></div><div class="ov3 gridbg"></div>
+  </div>
+  <span class="yearghost" aria-hidden="true">1845</span>
+  <div class="wrap" style="display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:48px">
+    <div class="reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(36,64,79,.6);padding-bottom:16px">
+      <span class="label frost">✦ &nbsp;Her Majesty's Admiralty</span>
+      <span class="label dim">Case No. 1845 / Northwest Passage</span>
+    </div>
+
+    <div class="grid12" style="align-items:center">
+      <div class="c7">
+        <div class="reveal"><p class="label brass">Polar Expedition · 1845–1848</p></div>
+        <h1 class="reveal"><small>The</small>FRANKLIN EXPEDITION</h1>
+        <div class="cols reveal">
+          <p>Two ships and <strong>129 men</strong> set out to find the Northwest Passage — the last uncharted stretch on the map of the world. The best-equipped expedition of its age: steam engines, central heating, three years of food.</p>
+          <p>None returned. The wrecks of Erebus and Terror were found only in <strong>2014 and 2016</strong> — and we still do not know what happened to the men between those dates.</p>
+        </div>
+        <div class="btns reveal">
+          <a class="btn gold" href="#timeline">▤ &nbsp;Read the chronicle</a>
+          <a class="btn" href="#map">⌖ &nbsp;Open the map</a>
+        </div>
+      </div>
+      <div class="c5 reveal">
+        <div class="ledger"><span class="num" data-count="2">0</span><span class="label mist lab">ships</span><p>Erebus and Terror, bomb vessels</p></div>
+        <div class="ledger"><span class="num" data-count="129">0</span><span class="label mist lab">men</span><p>134 left the Thames; five were sent home</p></div>
+        <div class="ledger"><span class="num" data-count="0">0</span><span class="label mist lab">returned</span><p>Not one member of the expedition survived</p></div>
+        <div style="border-top:1px solid rgba(36,64,79,.7);padding-top:20px">
+          <span class="label dim">The result</span>
+          <p class="serif italic frost" style="font-size:24px;line-height:1.35;margin-top:8px">The Northwest Passage was found — at the cost of the entire expedition.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="journal reveal">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px" class="label dim">
+          Ship's log <span class="jdots" id="jdots"></span>
+        </div>
+        <p id="jline" aria-live="polite"></p>
+      </div>
+      <a class="down" href="#ships">Scroll down <i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v16m0 0 6-6m-6 6-6-6"/></svg></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHIPS ============ -->
+<section id="ships" style="background:var(--hull)">
+<div class="wrap">
+  <div class="reveal">
+    <div class="kicker label"><span>01</span><i></i><span>Ships</span></div>
+    <h2 class="h2">Built to bombard.<br><span class="frost italic">Rebuilt for ice.</span></h2>
+    <p class="lead">Bomb vessels carried heavy mortars, and so had exceptionally strong hulls. That is why the Admiralty chose them for the Arctic — and in 1845 strengthened them again.</p>
+  </div>
+
+  <div class="grid12" style="margin-top:56px">
+    <div class="c5 reveal">
+      <p class="label dim" style="margin-bottom:16px">Choose a ship</p>
+      <button class="shippick on" data-shipbtn="erebus" aria-pressed="true">
+        <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='350'%3E%3Crect width='300' height='350' fill='%230b1a25'/%3E%3Cpath d='M30 250 L270 250 L230 300 L70 300Z' fill='%231a3140'/%3E%3Crect x='145' y='80' width='8' height='170' fill='%23c9973f'/%3E%3Cpath d='M153 90 L230 220 L153 220Z' fill='%23e9f1f5' opacity='.55'/%3E%3Cpath d='M145 100 L80 220 L145 220Z' fill='%23e9f1f5' opacity='.35'/%3E%3Cpath d='M20 330 Q150 300 280 330' stroke='%238ec2da' stroke-opacity='.4' fill='none'/%3E%3C/svg%3E" alt="HMS Erebus">
+        <span><span class="label brass">HMS EREBUS</span><h3>Erebus</h3><span class="serif mist" style="font-size:14px">Flagship of the expedition</span><span class="meta" style="display:block">372 tons · ≈70 men</span></span>
+      </button>
+      <button class="shippick" data-shipbtn="terror" aria-pressed="false">
+        <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='350'%3E%3Crect width='300' height='350' fill='%230b1a25'/%3E%3Cpath d='M30 250 L270 250 L230 300 L70 300Z' fill='%231a3140'/%3E%3Crect x='145' y='80' width='8' height='170' fill='%23c9973f'/%3E%3Cpath d='M153 90 L230 220 L153 220Z' fill='%23e9f1f5' opacity='.45'/%3E%3Cpath d='M145 100 L80 220 L145 220Z' fill='%23e9f1f5' opacity='.3'/%3E%3Cpath d='M20 330 Q150 300 280 330' stroke='%238ec2da' stroke-opacity='.35' fill='none'/%3E%3C/svg%3E" alt="HMS Terror">
+        <span><span class="label brass">HMS TERROR</span><h3>Terror</h3><span class="serif mist" style="font-size:14px">The second ship</span><span class="meta" style="display:block">325 tons · ≈65 men</span></span>
+      </button>
+      <ul class="reveal" id="shipfacts" style="list-style:none;padding:0;margin:32px 0 0;border-top:1px solid rgba(36,64,79,.6);padding-top:24px"></ul>
+    </div>
+
+    <div class="c7 reveal">
+      <div class="shipframe" id="shipframe">
+        <img id="shipimg" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'%3E%3Crect width='1200' height='700' fill='%230b1a25'/%3E%3Cpath d='M0 560 Q300 500 600 540 T1200 520 L1200 700 L0 700Z' fill='%23e9f1f5' opacity='.12'/%3E%3Cpath d='M180 470 L1020 470 L900 560 L300 560Z' fill='%231a3140'/%3E%3Crect x='590' y='190' width='14' height='280' fill='%23c9973f'/%3E%3Cpath d='M604 210 L850 430 L604 430Z' fill='%23e9f1f5' opacity='.45'/%3E%3Cpath d='M590 230 L390 430 L590 430Z' fill='%23e9f1f5' opacity='.28'/%3E%3Cpath d='M0 620 Q300 570 600 610 T1200 590' stroke='%238ec2da' stroke-opacity='.35' fill='none'/%3E%3C/svg%3E" alt="HMS Erebus in the ice">
+        <div class="cap"><div><p class="label brass" id="shiplatin">HMS EREBUS</p><h3 id="shipname">Erebus</h3></div><p class="mono frost" style="font-size:11px;letter-spacing:.15em" id="shipfound">FOUND · 2 SEPTEMBER 2014</p></div>
+      </div>
+      <div class="specs" id="shipspecs"></div>
+    </div>
+  </div>
+
+  <div style="margin-top:80px">
+    <div class="reveal divider" style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px">
+      <h3 class="h3">What was done before departure</h3><span class="label dim">Refit · spring 1845</span>
+    </div>
+    <div class="mods">
+      <div class="mod reveal"><span class="n">01</span><span style="font-size:20px">⚓</span><div><h4>Ice armour</h4><p>The bow was sheathed in iron and extra oak, with diagonal bracing and cross-beams inside: the hull was built to absorb the recoil of mortars.</p></div></div>
+      <div class="mod reveal"><span class="n">02</span><span style="font-size:20px">⚙</span><div><h4>Steam and screw</h4><p>Twenty-five horsepower each, from railway locomotives; the screw and rudder could be hoisted into wells so the ice could not tear them off. Under steam: about four knots.</p></div></div>
+      <div class="mod reveal"><span class="n">03</span><span style="font-size:20px">♨</span><div><h4>Heat</h4><p>The Sylvester system: hot air ducted through the decks and hot-water pipes along the living quarters. A first for the polar fleet.</p></div></div>
+      <div class="mod reveal"><span class="n">04</span><span style="font-size:20px">≈</span><div><h4>Fresh water</h4><p>Desalinators fed from the ship's boilers, tanks holding thousands of litres — plus lemon juice against scurvy.</p></div></div>
+      <div class="mod reveal"><span class="n">05</span><span style="font-size:20px">▤</span><div><h4>Three years of provisions</h4><p>About 62 tons of flour, 16.7 tons of salt beef, 8,000 Goldner's tinned meats, tea, sugar, chocolate, dried vegetables.</p></div></div>
+      <div class="mod reveal"><span class="n">06</span><span style="font-size:20px">✧</span><div><h4>Science and daily life</h4><p>Magnetic instruments, botanical presses, schoolbooks for the men, a barrel organ, masks and costumes for a masquerade ball.</p></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section id="timeline">
+<div class="wrap">
+  <div class="reveal">
+    <div class="kicker label"><span>02</span><i></i><span>Timeline</span></div>
+    <h2 class="h2">Nine years of silence<br><span class="frost italic">and a century and a half of searching</span></h2>
+    <p class="lead">From the ceremonial departure to the DNA identifications of 2026. Choose an era — or read straight through.</p>
+  </div>
+  <div class="tl-filter reveal">
+    <button class="chip on" data-phase="all">Full chronicle <small>18</small></button>
+    <button class="chip" data-phase="expedition">Expedition 1845–1848 <small>9</small></button>
+    <button class="chip" data-phase="search">Searches 1848–1880 <small>4</small></button>
+    <button class="chip" data-phase="modern">Twenty-first century <small>5</small></button>
+  </div>
+
+  <div class="grid12" style="margin-top:56px">
+    <div class="c3"><div class="tl-sticky">
+      <p class="label dim">Current entry</p>
+      <p class="big" id="tlYear">1845</p>
+      <p class="mono brass" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-top:12px" id="tlDate">19 May 1845</p>
+      <p class="mist" style="font-size:14px;line-height:1.6;margin-top:14px;max-width:28ch" id="tlTitle">Departure from Greenhithe</p>
+      <div class="tl-progress"><div id="tlBar"></div></div>
+      <p class="mono dim" style="font-size:11px;letter-spacing:.16em;margin-top:16px" id="tlCount">01 / 18</p>
+    </div></div>
+    <div class="c9"><div class="tl-track" id="timelineList">
+      <article class="tl-item" data-phase="expedition" data-year="1845" data-date="19 May 1845" data-title="Departure from Greenhithe">
+        <div class="date">19 May 1845</div><div class="body"><div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px"><h3>Departure from Greenhithe</h3><div class="stat"><b>134</b><span>men aboard</span></div></div>
+        <p class="txt">Two bomb vessels leave the Thames: the finest polar ships Britain had, three years of provisions, steam engines taken from railway locomotives, 1,200 books aboard Erebus. The expedition is seen off as a triumph: only the last links of the Northwest Passage remained to be closed.</p></div></article>
+      <article class="tl-item" data-phase="expedition" data-year="1845" data-date="July 1845" data-title="Greenland: the last letters" data-wp="disko">
+        <div class="date">July 1845</div><div class="body"><div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px"><h3>Greenland: the last letters</h3><div class="stat"><b>129</b><span>remained with the expedition</span></div></div>
+        <p class="txt">In Disko Bay five members of the crew are sent home aboard transport ships. The rest write to their families — these letters will be the last words from the expedition to reach home. The officers send their love and promise to return through the Pacific.</p><button class="maplink" data-gomap="disko">⌖ &nbsp;Show on the map</button></div></article>
+      <article class="tl-item" data-phase="expedition" data-year="1845" data-date="late July 1845" data-title="The last witnesses" data-wp="whalers">
+        <div class="date">late July 1845</div><div class="body"><h3>The last witnesses</h3><p class="txt">The whalers Dannett and Martin meet the ships in Baffin Bay. Franklin is waiting for a lead to cross the bay toward Lancaster Sound. Morale is excellent. After this — silence for nine years.</p><button class="maplink" data-gomap="whalers">⌖ &nbsp;Show on the map</button></div></article>
+      <article class="tl-item" data-phase="expedition" data-year="1846" data-date="winter 1845–1846" data-title="Beechey Island: three graves" data-wp="beechey">
+        <div class="date">winter 1845–1846</div><div class="body"><div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px"><h3>Beechey Island: three graves</h3><div class="stat"><b>3</b><span>first deaths</span></div></div>
+        <p class="txt">The first winter goes well: the ships lie in a harbour, the workshops are busy, magnetic surveys are under way. But in January they bury stoker John Torrington and seaman John Hartnell; in April, marine William Braine.</p><button class="maplink" data-gomap="beechey">⌖ &nbsp;Show on the map</button></div></article>
+      <article class="tl-item" data-phase="expedition" data-year="1846" data-date="12 September 1846" data-title="The ice closes" data-wp="beset">
+        <div class="date">12 September 1846</div><div class="body"><h3>The ice closes</h3><p class="txt">The ships are beset in Victoria Strait northwest of King William Island. The summer of 1846 was cold, and multi-year ice never left the shore. They will not break free in 1847, nor in 1848.</p><button class="maplink" data-gomap="beset">⌖ &nbsp;Show on the map</button></div></article>
+      <article class="tl-item" data-phase="expedition" data-year="1847" data-date="24 May 1847" data-title="“All well”" data-wp="victory">
+        <div class="date">24 May 1847</div><div class="body"><h3>“All well”</h3><p class="txt">Lieutenant Graham Gore and Mate Des Voeux leave a standard Admiralty form in a cairn at Victory Point with a confident note: wintered, ascended to 77° N, a party of two officers and six men gone ashore. Three weeks later Franklin will be dead.</p><button class="maplink" data-gomap="victory">⌖ &nbsp;Show on the map</button></div></article>
+      <article class="tl-item" data-phase="expedition" data-year="1847" data-date="11 June 1847" data-title="The death of Sir John Franklin">
+        <div class="date">11 June 1847</div><div class="body"><div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px"><h3>The death of Sir John Franklin</h3><div class="stat"><b>24</b><span>dead by spring 1848</span></div></div>
+        <p class="txt">The commander dies aboard Erebus at the age of 60. The cause is unknown. Command passes to Francis Crozier — an Irishman, veteran of four polar winters, the most experienced ice captain in Britain.</p></div></article>
+      <article class="tl-item" data-phase="expedition" data-year="1848" data-date="22 April 1848" data-title="The ships are abandoned" data-wp="victory">
+        <div class="date">22 April 1848</div><div class="body"><div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px"><h3>The ships are abandoned</h3><div class="stat"><b>105</b><span>set out on foot</span></div></div>
+        <p class="txt">After 19 months in the ice, 105 survivors come ashore at Victory Point. They drag boats loaded with supplies and possessions south toward Back River. Nine officers and fifteen men are already dead. The march begins from which no one will return.</p><button class="maplink" data-gomap="victory">⌖ &nbsp;Show on the map</button></div></article>
+      <article class="tl-item" data-phase="expedition" data-year="1848" data-date="25 April 1848" data-title="The note in the margin" data-wp="victory">
+        <div class="date">25 April 1848</div><div class="body"><h3>The note in the margin</h3><p class="txt">Crozier and Fitzjames write along the edges of the same form — in handwriting cramped by the margins: the date the ships were abandoned, the number of men, Franklin's death, the course for Back River. The document stays in the cairn for eleven years.</p><button class="maplink" data-gomap="victory">⌖ &nbsp;Show on the map</button></div></article>
+      <article class="tl-item" data-phase="search" data-year="1848" data-date="1848–1859" data-title="The great searches">
+        <div class="date">1848–1859</div><div class="body"><div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px"><h3>The great searches</h3><div class="stat"><b>30+</b><span>search expeditions</span></div></div>
+        <p class="txt">Lady Jane Franklin refuses to accept that her husband is dead and campaigns for new expeditions. The Admiralty and private donors send dozens of ships. The searches do not find the men, but they chart almost the whole of Arctic Canada.</p></div></article>
+      <article class="tl-item" data-phase="search" data-year="1854" data-date="April 1854" data-title="John Rae and the terrible news">
+        <div class="date">April 1854</div><div class="body"><h3>John Rae and the terrible news</h3><p class="txt">The Scottish surgeon and traveller brings to London Inuit accounts of bodies, a boat, and traces of cannibalism, along with silver spoons bearing officers' crests. Society meets it with fury: Dickens publicly calls the evidence “the vague babble of savages.”</p></div></article>
+      <article class="tl-item" data-phase="search" data-year="1859" data-date="May 1859" data-title="McClintock finds the note" data-wp="erebusbay">
+        <div class="date">May 1859</div><div class="body"><h3>McClintock finds the note</h3><p class="txt">The Fox expedition, paid for by Lady Franklin, finally obtains proof: the Victory Point note, a boat with two skeletons at Erebus Bay, dozens of relics and Inuit testimonies. Officially: the expedition perished, but it had discovered the Northwest Passage.</p><button class="maplink" data-gomap="erebusbay">⌖ &nbsp;Show on the map</button></div></article>
+      <article class="tl-item" data-phase="search" data-year="1869" data-date="1869–1880" data-title="Hall and Schwatka among the Inuit">
+        <div class="date">1869–1880</div><div class="body"><h3>Hall and Schwatka among the Inuit</h3><p class="txt">The Americans Charles Francis Hall and Frederick Schwatka live for years among the Netsilik Inuit and record oral testimony. Their maps will match the places of future discoveries — with an accuracy that Victorian search parties never achieved.</p></div></article>
+      <article class="tl-item" data-phase="modern" data-year="1981" data-date="1981–1986" data-title="The exhumations at Beechey" data-wp="beechey">
+        <div class="date">1981–1986</div><div class="body"><h3>The exhumations at Beechey</h3><p class="txt">The anthropologist Owen Beattie raises the bodies of the three sailors. Their hair and bones show high levels of lead; Torrington's lungs show tuberculosis and pneumonia. The argument over lead poisoning has not ended.</p><button class="maplink" data-gomap="beechey">⌖ &nbsp;Show on the map</button></div></article>
+      <article class="tl-item" data-phase="modern" data-year="2014" data-date="2 September 2014" data-title="Erebus is found" data-wp="erebuswreck">
+        <div class="date">2 September 2014</div><div class="body"><h3>Erebus is found</h3><p class="txt">169 years after the departure, a Canadian team finds the ship in only 11 metres of water — south of every area the Victorian searchers combed. The ship had been shifted by ice. Inuit oral history pointed the way.</p><button class="maplink" data-gomap="erebuswreck">⌖ &nbsp;Show on the map</button></div></article>
+      <article class="tl-item" data-phase="modern" data-year="2016" data-date="3 September 2016" data-title="Terror is found" data-wp="terrorwreck">
+        <div class="date">3 September 2016</div><div class="body"><h3>Terror is found</h3><p class="txt">In Terror Bay, northwest of King William Island, the second ship is discovered — almost perfectly preserved, with glass in the windows and dishes on the shelves. Inuit had spoken of the place for decades.</p><button class="maplink" data-gomap="terrorwreck">⌖ &nbsp;Show on the map</button></div></article>
+      <article class="tl-item" data-phase="modern" data-year="2026" data-date="2021 · 2024 · 2026" data-title="DNA gives names back">
+        <div class="date">2021 · 2024 · 2026</div><div class="body"><div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px"><h3>DNA gives names back</h3><div class="stat"><b>6</b><span>identified by DNA</span></div></div>
+        <p class="txt">Geneticists from the University of Waterloo and Lakehead University identify engineer John Gregory (2021), Captain James Fitzjames (2024, with cut marks on his jaw) and four more sailors (2026), including able seaman Harry Peglar. In all, six of the 129 have been named by DNA.</p></div></article>
+      <article class="tl-item" data-phase="modern" data-year="today" data-date="today" data-title="The excavation continues" data-wp="gjoa">
+        <div class="date">today</div><div class="body"><h3>The excavation continues</h3><p class="txt">Parks Canada's underwater archaeologists work through holes cut in an ice dome, raising pistols, coins, thermometers, drawings and shoes. The artefacts belong jointly to Canada and the Inuit Heritage Trust and are displayed in Gjoa Haven. The full picture of the tragedy still eludes us.</p><button class="maplink" data-gomap="gjoa">⌖ &nbsp;Show on the map</button></div></article>
+    </div></div>
+  </div>
+</div>
+</section>
+
+<!-- ============ MAP ============ -->
+<section id="map" style="background:var(--hull)">
+<div class="wrap">
+  <div class="reveal">
+    <div class="kicker label"><span>03</span><i></i><span>Map</span></div>
+    <h2 class="h2">Twenty miles<br><span class="frost italic">from open water</span></h2>
+    <p class="lead">The ships were trapped in Victoria Strait — where multi-year ice bears down from the north. Both wrecks were found far south and north of the nineteenth-century search areas: the ice carried them away after the men left.</p>
+  </div>
+  <div class="layerbtns reveal">
+    <button class="layerbtn on" data-layer="route" aria-pressed="true"><span style="font-size:18px">⛵</span><span><b>Route 1845–1848</b><small>The path we know with certainty</small></span></button>
+    <button class="layerbtn" data-layer="search" aria-pressed="false"><span style="font-size:18px">⌕</span><span><b>Nineteenth-century searches</b><small>What the Victorian expeditions found</small></span></button>
+    <button class="layerbtn" data-layer="modern" aria-pressed="false"><span style="font-size:18px">✧</span><span><b>Twenty-first-century finds</b><small>Wrecks, excavations, living memory</small></span></button>
+  </div>
+  <div class="grid12" style="margin-top:32px">
+    <div class="c8 reveal"><div class="chartbox">
+      <div class="top"><span class="label brass">The Northwest Passage</span><span class="label dim">Schematic map · not for navigation</span></div>
+      <div class="chartscroll"><div id="chart"></div></div>
+      <div class="legend" id="legend"></div>
+    </div></div>
+    <div class="c4">
+      <div class="mapcard reveal"><p class="label brass" id="mapDate"></p><h3 id="mapName"></h3><p class="mono frost" style="font-size:11px;letter-spacing:.12em" id="mapCoord"></p><p id="mapText"></p></div>
+      <div class="pointlist reveal" style="margin-top:16px"><div class="h label dim" id="mapListHead">Layer points</div><ul id="mapList"></ul></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ============ NOTE ============ -->
+<section id="note" style="background:var(--deep)">
+<div class="wrap">
+  <div class="reveal">
+    <div class="kicker label"><span>04</span><i></i><span>Document</span></div>
+    <h2 class="h2">The only sheet<br><span class="frost italic">they left behind</span></h2>
+    <p class="lead">A standard Admiralty form, hidden in a stone cairn at Victory Point. The entry of 1847 — and a note in the margin from 1848, written in other hands. Everything the expedition said about itself.</p>
+  </div>
+  <div class="grid12" style="margin-top:48px">
+    <div class="c7 reveal">
+      <div class="chips" style="margin:0 0 20px">
+        <button class="chip on" data-lang="en">Original · EN</button>
+        <button class="chip" data-lang="ru">Russian translation</button>
+        <button class="chip on" id="marginBtn">The 1848 addition</button>
+      </div>
+      <article class="paper">
+        <div class="head"><span>Admiralty form · Arctic expedition</span><span>Victory Point · 1859</span></div>
+        <div class="body" data-lang="en">
+          <p>H.M.Ships Erebus and Terror wintered in the Ice in Lat. 70°5′ N Long. 98°23′ W. Having wintered <mark data-note="2">in 1846–7<sup>2</sup></mark> at Beechey Island in Lat 74°43′28″ N Long 91°39′15″ W after having ascended Wellington Channel to Lat 77° and returned by the West side of Cornwallis Island.</p>
+          <p>Sir John Franklin commanding the Expedition. <mark data-note="1">All well.<sup>1</sup></mark> Party consisting of 2 Officers and 6 Men left the ships on Monday 24th May 1847.</p>
+          <p class="sign">Gm. Gore, Lieut. · Chas. F. Des Voeux, Mate</p>
+          <div class="margin"><p>April 25th 1848 — HMShips Terror and Erebus were deserted on the 22nd April <mark data-note="3">5 leagues NNW of this<sup>3</sup></mark> having been beset since 12th Sept 1846. The Officers and Crews consisting of 105 souls under the command of Captain F.R.M. Crozier landed here in Lat. 69°37′42″ Long. 98°41′.</p>
+            <p>Sir John Franklin died on the 11th June 1847 and the total loss by deaths in the Expedition has been to this date <mark data-note="4">9 officers and 15 men<sup>4</sup></mark>.</p>
+            <p>and start on tomorrow 26th for Backs Fish River.</p>
+            <p class="sign">F.R.M. Crozier, Captain &amp; Senior Offr. · James Fitzjames, Captain HMS Erebus</p></div>
+        </div>
+        <div class="body" data-lang="ru" hidden>
+          <p>Корабли Её Величества «Эребус» и «Террор» зимуют во льдах на 70°05′ с. ш., 98°23′ з. д. Перезимовав <mark data-note="2">в 1846–7 годах<sup>2</sup></mark> у острова Бичи на 74°43′28″ с. ш., 91°39′15″ з. д., поднявшись проливом Веллингтон до 77° с. ш. и вернувшись западным берегом острова Корнуоллис.</p>
+          <p>Сэр Джон Франклин командует экспедицией. <mark data-note="1">Всё благополучно.<sup>1</sup></mark> Партия из 2 офицеров и 6 матросов покинула корабли в понедельник 24 мая 1847 года.</p>
+          <p class="sign">Грэм Гор, лейтенант · Чарльз Ф. Де Вё, мичман</p>
+          <div class="margin"><p>25 апреля 1848 года. Корабли Её Величества «Террор» и «Эребус» оставлены 22 апреля <mark data-note="3">в 5 лигах к северо-северо-западу отсюда<sup>3</sup></mark>, будучи зажаты льдами с 12 сентября 1846 года. Офицеры и команды, 105 душ, под командою капитана Ф. Р. М. Крозье высадились здесь — на 69°37′42″ с. ш., 98°41′ з. д.</p>
+            <p>Сэр Джон Франклин скончался 11 июня 1847 года. Всего по экспедиции умерло к сему дню <mark data-note="4">9 офицеров и 15 матросов<sup>4</sup></mark>.</p>
+            <p>Завтра, 26-го, выступаем к реке Бак.</p>
+            <p class="sign">Ф. Р. М. Крозье, капитан · Джеймс Фицджеймс, капитан «Эребуса»</p></div>
+        </div>
+        <div class="foot"><span>Found 5 May 1859 · Lieutenant William Hobson</span><span>National Maritime Museum, Greenwich</span></div>
+      </article>
+    </div>
+    <div class="c5">
+      <div class="reveal"><p class="label dim" style="margin-bottom:16px">Reading the document · hover over the underlined words</p>
+        <ul class="notes" style="padding:0;margin:0">
+          <li><button data-notebtn="1"><span class="n">1</span><span>“All well”</span></button></li>
+          <li><button data-notebtn="2"><span class="n">2</span><span>An error in the year of the wintering</span></button></li>
+          <li><button data-notebtn="3"><span class="n">3</span><span>Five leagues north-northwest</span></button></li>
+          <li><button data-notebtn="4"><span class="n">4</span><span>9 officers and 15 men</span></button></li>
+        </ul>
+      </div>
+      <div class="notecard reveal" id="notecard"><p class="label brass">✧ &nbsp;Note <span id="noteNum">4</span></p><h3 id="noteTitle"></h3><p id="noteText"></p></div>
+      <p class="reveal serif italic frost" style="font-size:20px;line-height:1.6;border-left:2px solid rgba(201,151,63,.5);padding-left:20px;margin-top:24px">For eleven years this sheet lay among the stones, three hundred metres from where the ships were being sought. Everything we know about the last days begins with it.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ============ CREW ============ -->
+<section id="crew">
+<div class="wrap">
+  <div class="reveal">
+    <div class="kicker label"><span>05</span><i></i><span>People</span></div>
+    <h2 class="h2">129 men.<br><span class="frost italic">Not one survivor.</span></h2>
+    <p class="lead">Officers, seamen, Royal Marines, surgeons, engineers, caulkers and boys. Three are buried on Beechey Island, twenty-one died aboard the ships, one hundred and five set out on foot — and all perished.</p>
+  </div>
+  <div class="grid12" style="margin-top:56px">
+    <div class="c5 reveal"><div class="card" style="height:100%">
+      <h3 class="serif" style="font-size:24px">Where the 129 went</h3><p class="label dim" style="margin-top:4px">According to the 1848 note</p>
+      <div class="donut"><div><b>129</b><span>MEN</span></div></div>
+      <ul class="fates" style="padding:0;margin-top:24px">
+        <li><span class="mist" style="font-size:14px"><i style="background:var(--frost)"></i>Buried on Beechey Island</span><b>3</b></li>
+        <li><span class="mist" style="font-size:14px"><i style="background:var(--brass)"></i>Died before April 1848</span><b>21</b></li>
+        <li><span class="mist" style="font-size:14px"><i style="background:var(--rust)"></i>Marched south and died</span><b>105</b></li>
+      </ul>
+    </div></div>
+    <div class="c7 reveal"><div class="card" style="height:100%">
+      <h3 class="serif" style="font-size:24px">Provisions: a three-year estimate</h3><p class="label dim" style="margin-top:4px">Approximate weight, tons</p>
+      <div class="bars" id="bars">
+        <div class="bar"><span>Flour and biscuit</span><span class="fill"><i data-w="100" style="background:#8ec2da"></i></span><b>62 t</b></div>
+        <div class="bar"><span>Salt beef and pork</span><span class="fill"><i data-w="27" style="background:#6fa7c0"></i></span><b>16.7 t</b></div>
+        <div class="bar"><span>Tinned food · 8,000 cans</span><span class="fill"><i data-w="6" style="background:#c9973f"></i></span><b>3.6 t</b></div>
+        <div class="bar"><span>Tea, sugar, chocolate</span><span class="fill"><i data-w="9" style="background:#b06a44"></i></span><b>5.5 t</b></div>
+        <div class="bar"><span>Lemon juice</span><span class="fill"><i data-w="7" style="background:#7f9270"></i></span><b>4.2 t</b></div>
+      </div>
+      <p class="mist" style="font-size:14px;line-height:1.7;border-top:1px solid rgba(36,64,79,.4);padding-top:16px;margin-top:20px">There was food enough — which is exactly why the mystery will not resolve. Men died with full holds, and then dragged boats across the tundra packed with books, soap and silverware instead of supplies.</p>
+    </div></div>
+  </div>
+
+  <div style="margin-top:80px">
+    <div class="reveal divider" style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px">
+      <h3 class="h3">Ship's muster</h3><span class="label dim">☷ &nbsp;<span id="crewTotal">0</span> names of 129 · a fragment</span>
+    </div>
+    <div class="searchbox reveal">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input id="crewSearch" type="search" placeholder="Search by name, Latin spelling or rank…" aria-label="Search the muster">
+      <button id="crewClear" aria-label="Clear search">✕</button>
+    </div>
+    <div class="filterrow reveal"><span class="label dim">Ship</span><button class="chip on" data-shipfilter="All">All</button><button class="chip" data-shipfilter="Erebus">Erebus</button><button class="chip" data-shipfilter="Terror">Terror</button></div>
+    <div class="filterrow reveal"><span class="label dim">Category</span><button class="chip on" data-cat="All">All</button><button class="chip" data-cat="Officers">Officers</button><button class="chip" data-cat="Crew">Crew</button><button class="chip" data-cat="Royal Marines">Royal Marines</button><button class="chip" data-cat="Specialists">Specialists</button></div>
+    <div class="filterrow reveal"><span class="label dim">Special</span><button class="chip" data-badge="DNA">✧ Identified by DNA</button><button class="chip" data-badge="Beechey">✝ Beechey graves</button><button class="chip" data-badge="Note">▤ Signatories of the note</button><span class="mono frost" style="margin-left:auto;font-size:11px;letter-spacing:.14em">Found: <span id="crewFound">00</span></span></div>
+    <div class="crewgrid" id="crewGrid">
+      <div class="crew" data-ship="Erebus" data-cat="Officers" data-badge="Note" data-text="John Franklin Sir John Franklin rear admiral commander"><span class="tag">Erebus</span><h4>John Franklin</h4><p class="lat">Sir John Franklin</p><p class="role">Rear Admiral, commander of the expedition</p><p class="fate">Died 11 June 1847 aboard ship. His grave has never been found.</p><span class="badge">▤ Note</span></div>
+      <div class="crew" data-ship="Terror" data-cat="Officers" data-badge="Note" data-text="Francis Crozier Francis R. M. Crozier captain"><span class="tag moss">Terror</span><h4>Francis Crozier</h4><p class="lat">Francis R. M. Crozier</p><p class="role">Captain of Terror, commander from June 1847</p><p class="fate">Signed the 25 April 1848 addition. His later fate is unknown.</p><span class="badge">▤ Note</span></div>
+      <div class="crew" data-ship="Erebus" data-cat="Officers" data-badge="DNA" data-text="James Fitzjames James Fitzjames captain Erebus DNA"><span class="tag">Erebus</span><h4>James Fitzjames</h4><p class="lat">James Fitzjames</p><p class="role">Captain of Erebus</p><p class="fate">Signed the 1848 note. Identified by DNA in 2024: his jaw bore cut marks.</p><span class="badge">✧ DNA</span></div>
+      <div class="crew" data-ship="Erebus" data-cat="Officers" data-badge="Note" data-text="Graham Gore Graham Gore first lieutenant"><span class="tag">Erebus</span><h4>Graham Gore</h4><p class="lat">Graham Gore</p><p class="role">First Lieutenant</p><p class="fate">Left the “all well” entry in May 1847; died later that year.</p><span class="badge">▤ Note</span></div>
+      <div class="crew" data-ship="Erebus" data-cat="Officers" data-badge="" data-text="James Fairholme James W. Fairholme third lieutenant"><span class="tag">Erebus</span><h4>James Fairholme</h4><p class="lat">James W. Fairholme</p><p class="role">Third Lieutenant</p><p class="fate">His cabin was examined in 2022–23: fossils collected on the march were found inside.</p></div>
+      <div class="crew" data-ship="Erebus" data-cat="Officers" data-badge="" data-text="Henry Le Vesconte Henry Dundas Le Vesconte second lieutenant"><span class="tag">Erebus</span><h4>Henry Le Vesconte</h4><p class="lat">Henry T. D. Le Vesconte</p><p class="role">Second Lieutenant</p><p class="fate">His cabin yielded a thermometer, a fishing rod with a brass reel and a parallel ruler.</p></div>
+      <div class="crew" data-ship="Erebus" data-cat="Officers" data-badge="Note" data-text="Charles Des Voeux Charles Des Voeux mate"><span class="tag">Erebus</span><h4>Charles Des Voeux</h4><p class="lat">Charles F. Des Voeux</p><p class="role">Mate, later Lieutenant</p><p class="fate">Second signatory of the May 1847 entry. Died after April 1848.</p><span class="badge">▤ Note</span></div>
+      <div class="crew" data-ship="Terror" data-cat="Officers" data-badge="Remains" data-text="John Irving John Irving third lieutenant"><span class="tag moss">Terror</span><h4>John Irving</h4><p class="lat">John Irving</p><p class="role">Third Lieutenant</p><p class="fate">The only man whose presumed remains came home: buried in Edinburgh in 1881.</p><span class="badge">✝ Remains</span></div>
+      <div class="crew" data-ship="Erebus" data-cat="Specialists" data-badge="Remains" data-text="Harry Goodsir Harry D. S. Goodsir assistant surgeon naturalist"><span class="tag">Erebus</span><h4>Harry Goodsir</h4><p class="lat">Harry D. S. Goodsir</p><p class="role">Assistant Surgeon, naturalist</p><p class="fate">Kept the scientific observations and letters. Remains from Greenwich are thought to be his.</p><span class="badge">✝ Remains</span></div>
+      <div class="crew" data-ship="Erebus" data-cat="Specialists" data-badge="" data-text="Stephen Stanley Stephen S. Stanley ship's surgeon"><span class="tag">Erebus</span><h4>Stephen Stanley</h4><p class="lat">Stephen S. Stanley</p><p class="role">Ship's Surgeon</p><p class="fate">Died in 1847; one of the nine officers lost before April 1848.</p></div>
+      <div class="crew" data-ship="Erebus" data-cat="Specialists" data-badge="DNA" data-text="John Gregory John Gregory engineer DNA"><span class="tag">Erebus</span><h4>John Gregory</h4><p class="lat">John Gregory</p><p class="role">Engineer</p><p class="fate">The first member of the expedition identified by DNA — in 2021.</p><span class="badge">✧ DNA</span></div>
+      <div class="crew" data-ship="Terror" data-cat="Specialists" data-badge="" data-text="Thomas Blanky Thomas Blanky ice master"><span class="tag moss">Terror</span><h4>Thomas Blanky</h4><p class="lat">Thomas Blanky</p><p class="role">Ice Master</p><p class="fate">In 1837 he fought off a polar bear by thrusting a navigating instrument into its mouth.</p></div>
+      <div class="crew" data-ship="Erebus" data-cat="Crew" data-badge="Beechey" data-text="John Torrington John Torrington leading stoker"><span class="tag">Erebus</span><h4>John Torrington</h4><p class="lat">John Torrington</p><p class="role">Leading Stoker, aged 20</p><p class="fate">Died 1 January 1846. Buried at Beechey; his body was exhumed in 1984.</p><span class="badge">✝ Beechey</span></div>
+      <div class="crew" data-ship="Erebus" data-cat="Crew" data-badge="Beechey" data-text="John Hartnell John Hartnell able seaman"><span class="tag">Erebus</span><h4>John Hartnell</h4><p class="lat">John Hartnell</p><p class="role">Able Seaman, aged 25</p><p class="fate">Died 4 January 1846. His grave is on Beechey Island.</p><span class="badge">✝ Beechey</span></div>
+      <div class="crew" data-ship="Terror" data-cat="Royal Marines" data-badge="Beechey" data-text="William Braine William Braine private"><span class="tag moss">Terror</span><h4>William Braine</h4><p class="lat">William Braine</p><p class="role">Private, aged 33</p><p class="fate">Died 3 April 1846. The furthest of the three Beechey graves.</p><span class="badge">✝ Beechey</span></div>
+      <div class="crew" data-ship="Terror" data-cat="Crew" data-badge="DNA" data-text="Harry Peglar Harry Peglar able seaman DNA"><span class="tag moss">Terror</span><h4>Harry Peglar</h4><p class="lat">Harry Peglar</p><p class="role">Able Seaman, aged 21</p><p class="fate">Identified by DNA in 2026; found 130 km from the others. No signs of cannibalism.</p><span class="badge">✧ DNA</span></div>
+      <div class="crew" data-ship="Erebus" data-cat="Royal Marines" data-badge="" data-text="Solomon Tozer Solomon Tozer sergeant Royal Marines"><span class="tag">Erebus</span><h4>Solomon Tozer</h4><p class="lat">Solomon Tozer</p><p class="role">Sergeant, Royal Marines</p><p class="fate">Inuit described a man with a pistol and “gold chains” leading a party.</p></div>
+      <div class="crew" data-ship="Terror" data-cat="Crew" data-badge="" data-text="Cornelius Hickey Cornelius Hickey caulker's mate"><span class="tag moss">Terror</span><h4>Cornelius Hickey</h4><p class="lat">Cornelius Hickey</p><p class="role">Caulker's Mate</p><p class="fate">A real Irish sailor; “the mutineer Hickey” is a literary figure, not documented.</p></div>
+      <div class="crew" data-ship="Erebus" data-cat="Crew" data-badge="" data-text="Magnus Manson Magnus Manson able seaman"><span class="tag">Erebus</span><h4>Magnus Manson</h4><p class="lat">Magnus Manson</p><p class="role">Able Seaman</p><p class="fate">Mentioned in Inuit accounts recorded by Hall as “a very large man.”</p></div>
+      <div class="crew" data-ship="Terror" data-cat="Officers" data-badge="" data-text="George Hodgson George H. Hodgson mate"><span class="tag moss">Terror</span><h4>George Hodgson</h4><p class="lat">George H. Hodgson</p><p class="role">Mate</p><p class="fate">Left the ships in April 1848. His place of death is unknown.</p></div>
+      <div class="crew" data-ship="Terror" data-cat="Crew" data-badge="" data-text="David Young David Young boy"><span class="tag moss">Terror</span><h4>David Young</h4><p class="lat">David Young</p><p class="role">Boy, First Class</p><p class="fate">One of the youngest aboard. He died.</p></div>
+      <div class="crew" data-ship="Erebus" data-cat="Crew" data-badge="" data-text="Thomas Armitage Thomas Armitage wardroom servant"><span class="tag">Erebus</span><h4>Thomas Armitage</h4><p class="lat">Thomas Armitage</p><p class="role">Wardroom Servant</p><p class="fate">His pantry gave archaeologists their dishes, tins and shoes.</p></div>
+      <div class="crew" data-ship="Erebus" data-cat="Crew" data-badge="" data-text="William Strong William Strong able seaman"><span class="tag">Erebus</span><h4>William Strong</h4><p class="lat">William Strong</p><p class="role">Able Seaman</p><p class="fate">Died; his resting place has not been found.</p></div>
+      <div class="crew" data-ship="Terror" data-cat="Crew" data-badge="" data-text="Henry Collins Henry Collins captain's servant"><span class="tag moss">Terror</span><h4>Henry Collins</h4><p class="lat">Henry Collins</p><p class="role">Captain's Servant</p><p class="fate">Died; his resting place has not been found.</p></div>
+    </div>
+    <div class="empty" id="crewEmpty" hidden><p style="font-size:26px">⌕</p><h3>No one found</h3><p>Try another spelling, or clear the filters.</p><button class="btn gold" id="crewReset" style="margin-top:20px">Reset filters</button></div>
+  </div>
+</div>
+</section>
+
+<!-- ============ SEARCHES ============ -->
+<section id="search" style="background:var(--hull)">
+<div class="wrap">
+  <div class="reveal">
+    <div class="kicker label"><span>06</span><i></i><span>Searches</span></div>
+    <h2 class="h2">They looked for men —<br><span class="frost italic">and charted the Arctic</span></h2>
+    <p class="lead">More than thirty expeditions in twelve years, dozens of ships, millions of pounds. Not one man saved. The by-product of the search was almost the whole map of the Canadian North — and a Northwest Passage finally traversed from the west.</p>
+  </div>
+  <div class="grid12" style="margin-top:56px">
+    <div class="c8"><div class="reveal" style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(36,64,79,.6);padding-bottom:12px"><span class="label dim">✦ &nbsp;The principal search parties</span></div>
+      <div class="exped reveal"><span class="mono brass" style="font-size:12px">1848–1849</span><div><h3>James Clark Ross</h3><p class="shipname">Enterprise, Investigator</p><p class="txt">The first wave, searching from the east. They found only ice; wintered off Somerset Island.</p></div></div>
+      <div class="exped reveal"><span class="mono brass" style="font-size:12px">1848–1851</span><div><h3>Henry Kellett</h3><p class="shipname">Herald</p><p class="txt">Approached from the west through Bering Strait; discovered Herald Island. No men.</p></div></div>
+      <div class="exped reveal"><span class="mono brass" style="font-size:12px">1850–1851</span><div><h3>William Penny, Erasmus Ommanney</h3><p class="shipname">Admiralty squadron</p><p class="txt">Three graves, traces of a wintering and mountains of empty tins were found on Beechey Island.</p></div></div>
+      <div class="exped reveal"><span class="mono brass" style="font-size:12px">1850–1854</span><div><h3>Robert McClure</h3><p class="shipname">Investigator</p><p class="txt">Traversed the Northwest Passage from the west, but abandoned his ship in the ice of Mercy Bay.</p></div></div>
+      <div class="exped reveal"><span class="mono brass" style="font-size:12px">1852–1854</span><div><h3>Edward Belcher</h3><p class="shipname">Five ships</p><p class="txt">The largest and most expensive operation. Four vessels abandoned in the ice; Franklin not found.</p></div></div>
+      <div class="exped reveal"><span class="mono brass" style="font-size:12px">1853–1854</span><div><h3>John Rae</h3><p class="shipname">On foot, with boats</p><p class="txt">Collected Inuit testimony and officers' silver. Brought back the first truthful answer — and was rejected.</p></div></div>
+      <div class="exped reveal"><span class="mono brass" style="font-size:12px">1857–1859</span><div><h3>Francis McClintock</h3><p class="shipname">Fox</p><p class="txt">Paid for by Lady Franklin. Found the Victory Point note, the boat with skeletons, and dozens of relics.</p></div></div>
+      <div class="exped reveal"><span class="mono brass" style="font-size:12px">1878–1880</span><div><h3>Frederick Schwatka</h3><p class="shipname">Sledges, two years in the tundra</p><p class="txt">The first expedition built entirely on Inuit knowledge and methods of survival.</p></div></div>
+    </div>
+    <div class="c4">
+      <div class="reveal" style="border:1px solid rgba(201,151,63,.4);background:rgba(201,151,63,.06);padding:24px">
+        <p class="label brass">The engine of the search</p><h3 style="font-size:30px;line-height:1.15;margin-top:12px">Lady Jane Franklin</h3>
+        <p class="mist" style="font-size:14px;line-height:1.7;margin-top:16px">She refused to accept that her husband was dead and for twelve years campaigned for new expeditions: writing to the Admiralty, to presidents and to monarchs, spending her own fortune. When the state stopped, she fitted out the Fox herself — and that expedition found the Victory Point note.</p>
+        <p class="mono brass" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-top:1px solid rgba(201,151,63,.3);padding-top:16px;margin-top:16px">1847 — 1859 · five ships equipped</p>
+      </div>
+      <div class="quote reveal"><p style="font-size:20px;color:var(--rust)">❝</p><p class="serif italic" style="font-size:20px;line-height:1.5;margin-top:12px">“The vague babble of savages” — Charles Dickens's phrase for the Inuit testimony about the fate of the expedition.</p><p class="mist" style="font-size:14px;line-height:1.7;margin-top:16px">In 1854 London chose to insult the witnesses rather than accept their evidence. A century and a half later, that evidence led to the wrecks of both ships.</p></div>
+    </div>
+  </div>
+  <div style="margin-top:80px">
+    <div class="reveal divider" style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px"><h3 class="h3">Inuit oral history</h3><span class="label dim">Testimony that proved accurate</span></div>
+    <div class="testgrid">
+      <div class="reveal"><span class="mono frost" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase">Recorded by John Rae, 1854</span><p class="mist" style="font-size:15px;line-height:1.7;margin-top:16px">Inuit told of a party of white men dragging a boat upriver, of bodies in a tent and on the shore, of kettles, and of how it ended in starvation. Rae reported it verbatim — and was publicly accused of lying.</p><hr></div>
+      <div class="reveal"><span class="mono frost" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase">Recorded by Charles Hall, 1869</span><p class="mist" style="font-size:15px;line-height:1.7;margin-top:16px">Accounts of a ship that lasted a long time and was crushed by ice after the men had left; of white men who fell and died along the road south, and of people who wintered nearby.</p><hr></div>
+      <div class="reveal"><span class="mono frost" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase">Louie Kamookak, 1980s–2010s</span><p class="mist" style="font-size:15px;line-height:1.7;margin-top:16px">The Inuit historian from Gjoa Haven gathered dozens of oral accounts into a single map. His work, with the testimony of Sammy Kogvik, took the search vessels to Erebus and Terror.</p><hr></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ============ MYSTERY ============ -->
+<section id="mystery" style="padding:0;border:0">
+<div class="march grain"><img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Cdefs%3E%3ClinearGradient id='m' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230b1a25'/%3E%3Cstop offset='1' stop-color='%2305090e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23m)'/%3E%3Cpath d='M0 620 Q400 560 800 610 T1600 580 L1600 900 L0 900Z' fill='%23152a36'/%3E%3Cpath d='M0 700 Q500 650 900 720 T1600 680 L1600 900 L0 900Z' fill='%23e9f1f5' opacity='.12'/%3E%3Cpath d='M520 690 L760 690 L720 740 L560 740Z' fill='%231a3140'/%3E%3Crect x='630' y='560' width='6' height='130' fill='%23c9973f'/%3E%3Cpath d='M636 570 L700 640 L636 640Z' fill='%23e9f1f5' opacity='.4'/%3E%3C/svg%3E" alt="A deserted shore on King William Island with an abandoned sledge boat"><div class="ov"></div>
+  <div class="wrap" style="padding-top:clamp(80px,10vw,128px);padding-bottom:clamp(80px,10vw,128px)">
+    <div class="reveal">
+      <div class="kicker label"><span>07</span><i></i><span>The last march</span></div>
+      <h2 class="h2">They dragged their boats<br><span class="frost italic">toward life</span></h2>
+      <p class="lead">On 26 April 1848 one hundred and five men moved south along the west shore of King William Island. They hauled ship's boats on sledges, carrying books, soap, chocolate, silverware and toothbrushes. Inuit later found a boat turned bow-first back the other way: someone had tried to return to the ships.</p>
+    </div>
+    <div class="stats">
+      <div class="reveal"><b>≈400</b><p class="label dim" style="margin-top:12px">km to Back River</p></div>
+      <div class="reveal"><b>105</b><p class="label dim" style="margin-top:12px">men set out</p></div>
+      <div class="reveal"><b>2</b><p class="label dim" style="margin-top:12px">skeletons in the found boat</p></div>
+      <div class="reveal"><b>0</b><p class="label dim" style="margin-top:12px">reached help</p></div>
+    </div>
+  </div>
+</div>
+<div class="wrap" style="padding-top:0;padding-bottom:clamp(80px,10vw,128px)">
+  <div class="reveal divider" style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px"><h3 class="h3">Six theories — and no complete answer</h3><span class="label dim">Open a row</span></div>
+  <div id="accs">
+    <div class="acc" data-acc="lead"><button aria-expanded="false"><span class="n">01</span><span class="pm">+</span><span class="t">Lead poisoning<small>Goldner's tins, soldered with lead, and the water systems poisoned the crew.</small></span><span class="v copper">△ Disputed</span><span class="chev">⌄</span></button>
+      <div class="panel"><div class="inner"><div style="border-color:rgba(127,146,112,.6)"><span class="label moss">For</span><p>Raised lead was found in the hair and bones of Torrington, Hartnell and Braine. The tins at Beechey were indeed crudely and carelessly soldered.</p></div><div style="border-color:rgba(176,106,68,.6)"><span class="label copper">Against</span><p>Later isotopic studies point to lead from the ships' systems and the water pipes of their home towns rather than the tins; the levels vary.</p></div></div></div></div>
+    <div class="acc" data-acc="scurvy"><button aria-expanded="false"><span class="n">02</span><span class="pm">+</span><span class="t">Scurvy and starvation<small>The lemon juice had lost its potency, and there was no fresh food.</small></span><span class="v rust">✓ Confirmed</span><span class="chev">⌄</span></button>
+      <div class="panel"><div class="inner"><div style="border-color:rgba(127,146,112,.6)"><span class="label moss">For</span><p>Signs of scurvy on bones from Erebus Bay; Inuit accounts of men with “black faces”; a boat packed with useless things instead of food.</p></div><div style="border-color:rgba(176,106,68,.6)"><span class="label copper">Against</span><p>Scurvy is a consequence, not a first cause: it explains deaths on the march, but not why twenty-four men died aboard well-stocked ships.</p></div></div></div></div>
+    <div class="acc" data-acc="disease"><button aria-expanded="false"><span class="n">03</span><span class="pm">+</span><span class="t">Tuberculosis and pneumonia<small>In the crowded lower deck, infection would spread faster than in the city.</small></span><span class="v rust">✓ Confirmed</span><span class="chev">⌄</span></button>
+      <div class="panel"><div class="inner"><div style="border-color:rgba(127,146,112,.6)"><span class="label moss">For</span><p>Torrington's autopsy showed evidence of tuberculosis and pneumonia; he died in the very first winter.</p></div><div style="border-color:rgba(176,106,68,.6)"><span class="label copper">Against</span><p>The three Beechey dead are not necessarily representative of the whole crew; the scale of disease is unknown.</p></div></div></div></div>
+    <div class="acc" data-acc="cannibalism"><button aria-expanded="false"><span class="n">04</span><span class="pm">+</span><span class="t">Cannibalism<small>On the final stage of the march, some survivors ate the flesh of dead comrades.</small></span><span class="v rust">✓ Confirmed</span><span class="chev">⌄</span></button>
+      <div class="panel"><div class="inner"><div style="border-color:rgba(127,146,112,.6)"><span class="label moss">For</span><p>Cut marks on roughly a quarter of the studied bones; in 2024 this identified Captain Fitzjames. Inuit had spoken of it as early as 1854.</p></div><div style="border-color:rgba(176,106,68,.6)"><span class="label copper">Against</span><p>It is evidence of extreme starvation, not of “savagery”: it says nothing about the order and discipline of the preceding three years.</p></div></div></div></div>
+    <div class="acc" data-acc="ice"><button aria-expanded="false"><span class="n">05</span><span class="pm">+</span><span class="t">Ice and a wrong course<small>Peel Strait was choked: the cold years of 1846 and 1847 locked the ships in.</small></span><span class="v frost">✓ Key factor</span><span class="chev">⌄</span></button>
+      <div class="panel"><div class="inner"><div style="border-color:rgba(127,146,112,.6)"><span class="label moss">For</span><p>Dendrochronology and ice reconstructions confirm unusually severe seasons; the note records nineteen months of immobility.</p></div><div style="border-color:rgba(176,106,68,.6)"><span class="label copper">Against</span><p>Why they did not leave earlier, and why they went south rather than east toward Simpson Strait, is not fully explained.</p></div></div></div></div>
+    <div class="acc" data-acc="return"><button aria-expanded="false"><span class="n">06</span><span class="pm">+</span><span class="t">The ships were reoccupied<small>Terror was found closed and tidied: did someone return aboard?</small></span><span class="v gold">? Hypothesis</span><span class="chev">⌄</span></button>
+      <div class="panel"><div class="inner"><div style="border-color:rgba(127,146,112,.6)"><span class="label moss">For</span><p>Inuit accounts of a ship that sank later; closed hatches, intact glass, objects in their places.</p></div><div style="border-color:rgba(176,106,68,.6)"><span class="label copper">Against</span><p>Ice drift could also have moved the hull. There is no direct proof of reoccupation yet — the excavation continues.</p></div></div></div></div>
+  </div>
+
+  <div class="grid12" style="margin-top:80px">
+    <div class="c5 reveal"><h3 style="font-size:clamp(36px,4vw,52px);line-height:1.1">The full picture<br><span class="brass italic">is unknown</span></h3><p class="lead" style="font-size:16px">Every season of excavation adds objects — and new questions. The ships' logs, if they survive in the closed cabins, could tell everything. They have not yet been found.</p><p class="mono frost" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:24px">Excavation continues · Nunavut, Canada</p></div>
+    <div class="c7"><div class="qgrid">
+      <div class="reveal"><span class="frost">?</span><p>Where is John Franklin himself buried?</p></div>
+      <div class="reveal"><span class="frost">?</span><p>Why did twenty-four men die aboard ships with full holds?</p></div>
+      <div class="reveal"><span class="frost">?</span><p>Who returned to Terror after the ships were abandoned, and why?</p></div>
+      <div class="reveal"><span class="frost">?</span><p>How far south did the last survivors get?</p></div>
+      <div class="reveal"><span class="frost">?</span><p>Do the ships' logs survive in the cabins of the wrecks?</p></div>
+      <div class="reveal"><span class="frost">?</span><p>What did the Inuit know that we still have not understood?</p></div>
+    </div></div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="grid12">
+    <div class="c5 reveal"><p class="label brass">In memory</p><p class="serif" style="font-size:clamp(36px,4vw,52px);line-height:1.1;font-weight:700;margin-top:20px">129 names<br><span class="frost italic">carved in Greenwich</span></p><p class="lead" style="font-size:14px">The memorial in the courtyard of the Old Royal Naval College lists them all — from rear admiral to ship's boy. For a long time it was believed that they died as heroes struggling with the ice. The truth proved more complicated and more terrible, and it is still being assembled from bones, tin cans and Inuit testimony.</p><a class="btn" href="#top" style="margin-top:32px">↑ &nbsp;Back to the top</a></div>
+    <div class="c4 reveal"><p class="label dim">Sources</p><ul>
+      <li><p class="serif" style="font-size:18px">Parks Canada</p><p class="mist" style="font-size:12px;line-height:1.6;margin-top:4px">HMS Erebus and HMS Terror National Historic Site; underwater season reports</p></li>
+      <li><p class="serif" style="font-size:18px">McClintock, F. L., 1859</p><p class="mist" style="font-size:12px;line-height:1.6;margin-top:4px">The Voyage of the “Fox” in the Arctic Seas — publication of the Victory Point note</p></li>
+      <li><p class="serif" style="font-size:18px">Rae, J., 1854</p><p class="mist" style="font-size:12px;line-height:1.6;margin-top:4px">Report to the Admiralty on information obtained from the Inuit</p></li>
+      <li><p class="serif" style="font-size:18px">Beattie O., Geiger J.</p><p class="mist" style="font-size:12px;line-height:1.6;margin-top:4px">Frozen in Time — the Beechey exhumations</p></li>
+      <li><p class="serif" style="font-size:18px">Stenton D. et al., 2024</p><p class="mist" style="font-size:12px;line-height:1.6;margin-top:4px">Journal of Archaeological Science: Reports — the DNA of James Fitzjames</p></li>
+      <li><p class="serif" style="font-size:18px">University of Waterloo, 2026</p><p class="mist" style="font-size:12px;line-height:1.6;margin-top:4px">Four new DNA identifications of members of the expedition</p></li>
+    </ul></div>
+    <div class="c3 reveal"><p class="label dim">Check for yourself</p><ul>
+      <li><a class="ext" href="https://parks.canada.ca/lhn-nhs/nu/erebus" target="_blank" rel="noopener noreferrer">↗ <span>Parks Canada · the wrecks</span></a></li>
+      <li><a class="ext" href="https://www.rmg.co.uk/stories/topics/franklin-expedition" target="_blank" rel="noopener noreferrer">↗ <span>Royal Museums Greenwich</span></a></li>
+    </ul><div class="fine">An educational long read. The map is schematic: coastlines are simplified. Illustrations are artistic reconstructions, not historical images. The site is a single self-contained HTML file with no frameworks or external libraries.</div></div>
+  </div>
+  <div class="bottom"><span>HMS Erebus · HMS Terror · 1845–1848</span><span>70°05′ N · 98°23′ W</span></div>
+</div></footer>
+
+<script>/* ===========================================================
+   The Franklin Expedition — standalone HTML site, plain JS
+   =========================================================== */
+(() => {
+'use strict';
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- 1. Reveals, progress, navigation, counters ---------- */
+const revealIO = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } });
+}, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
+$$('.reveal').forEach((el,i) => { el.style.transitionDelay = `${Math.min((i%6)*70,300)}ms`; revealIO.observe(el); });
+
+const bar = $('#bar div'), hdr = $('#hdr');
+const navLinks = $$('#nav a');
+function onScroll(){
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.width = (h>0 ? (window.scrollY/h)*100 : 0) + '%';
+  hdr.classList.toggle('on', window.scrollY > 40);
+}
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+const navIO = new IntersectionObserver((es) => {
+  es.forEach(e => { if(e.isIntersecting) navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+e.target.id)); });
+}, { rootMargin: '-45% 0px -50% 0px' });
+['top','ships','timeline','map','note','crew','search','mystery'].forEach(id=>{const el=document.getElementById(id); if(el) navIO.observe(el);});
+
+$$('[data-count]').forEach(el => {
+  const target = +el.dataset.count;
+  if(!target || reduce){ el.textContent = target; return; }
+  let t0 = null;
+  const tick = t => { if(!t0) t0=t; const p=Math.min(1,(t-t0)/1700); el.textContent = Math.round(target*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+});
+
+/* ---------- 2. Ship's log ---------- */
+const log = [
+  ['19.05.1845','Greenhithe, the Thames. Both ships put to sea with a fair wind.'],
+  ['26.07.1845','Baffin Bay. The whalers see the expedition for the last time.'],
+  ['12.09.1846','70°05′ N · 98°23′ W. The ice closes. The drift begins.'],
+  ['25.04.1848','Victory Point. 105 men march south. There will be no more news.']
+];
+let logI = 0;
+const jdots = $('#jdots'), jline = $('#jline');
+log.forEach((_,i)=>{const b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Entry '+_[0]); b.onclick=()=>{logI=i; drawLog();}; jdots.appendChild(b);});
+function drawLog(){
+  jline.innerHTML = `<b>${log[logI][0]}</b>${log[logI][1]}`;
+  $$('#jdots button').forEach((b,i)=>b.classList.toggle('on',i===logI));
+}
+drawLog();
+if(!reduce) setInterval(()=>{logI=(logI+1)%log.length;drawLog();},5200);
+
+/* ---------- 3. Snow ---------- */
+(() => {
+  const cv = $('#snow'); if(!cv || reduce) return;
+  const ctx = cv.getContext('2d'); if(!ctx) return;
+  let w,h,f=[],raf,t=0;
+  function size(){
+    w=innerWidth; h=innerHeight;
+    const dpr=Math.min(devicePixelRatio||1,2);
+    cv.width=w*dpr; cv.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    const n=Math.min(160,Math.max(45,Math.round(w*h/22000)));
+    f=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.7+.4,vx:Math.random()*.35-.42,vy:Math.random()*.42+.12,o:Math.random()*.5+.15}));
+  }
+  function draw(){
+    t+=.006; ctx.clearRect(0,0,w,h);
+    f.forEach(p=>{
+      p.x+=p.vx+Math.sin(t+p.y*.01)*.28; p.y+=p.vy;
+      if(p.y>h+5){p.y=-5;p.x=Math.random()*w;} if(p.x<-5)p.x=w+5; if(p.x>w+5)p.x=-5;
+      ctx.beginPath(); ctx.fillStyle=`rgba(214,236,247,${p.o})`; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+    });
+    raf=requestAnimationFrame(draw);
+  }
+  size(); draw(); addEventListener('resize',size);
+})();
+
+/* ---------- 4. Ships ---------- */
+const SHIPS = {
+  erebus:{name:'Erebus',latin:'HMS EREBUS',found:'FOUND · 2 SEPTEMBER 2014',
+    specs:[['Launched','1826, Pembroke'],['Displacement','372 tons'],['Crew','≈70 men'],['Commander','Rear Admiral Sir John Franklin, aged 59'],['Engine','25 hp steam engine, screw propeller in a lifting well'],['Found','2 September 2014 · 11 m · Wilmot and Crampton Bay']],
+    facts:['Named after Erebus, the region of eternal darkness in the Greek underworld.','In 1841 she went farther south than any ship before: the Ross Sea and the great ice barrier.','She carried a ship\'s library of some 1,200 volumes and a daguerreotype apparatus.','Found badly damaged by ice: part of the deck torn away, objects scattered.']},
+  terror:{name:'Terror',latin:'HMS TERROR',found:'FOUND · 3 SEPTEMBER 2016',
+    specs:[['Launched','1813, Topsham'],['Displacement','325 tons'],['Crew','≈65 men'],['Commander','Captain Francis Rawdon Moira Crozier, aged 48'],['Engine','25 hp steam engine from a railway locomotive'],['Found','3 September 2016 · 21–24 m · Terror Bay']],
+    facts:['She bombarded Fort McHenry in 1814 — the bombs immortalised in the US national anthem.','In 1837 she barely reached Ireland after a year in the ice, on the verge of sinking.','She had already been to the Antarctic ice with Erebus in 1839–1843.','She is almost perfectly preserved: glass in the windows, closed doors, dishes in place.']}
+};
+const shipImgs={};
+function readShipImg(name){ const el=$(`[data-shipbtn="${name}"] img`); shipImgs[name]=el?el.src:''; }
+readShipImg('erebus'); readShipImg('terror');
+function setShip(k){
+  const s=SHIPS[k];
+  $$('[data-shipbtn]').forEach(b=>{const on=b.dataset.shipbtn===k;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);});
+  const img=$('#shipimg'); img.src=shipImgs[k]; img.alt='HMS '+s.name+' in the ice'; img.classList.add('fadein');
+  setTimeout(()=>img.classList.remove('fadein'),600);
+  $('#shiplatin').textContent=s.latin; $('#shipname').textContent=s.name; $('#shipfound').textContent=s.found;
+  $('#shipspecs').innerHTML=s.specs.map(x=>`<div><p class="label dim">${x[0]}</p><p>${x[1]}</p></div>`).join('');
+  $('#shipfacts').innerHTML=s.facts.map(x=>`<li style="display:flex;gap:12px;margin-bottom:16px;font-size:14px;line-height:1.65;color:var(--mist)"><span class="brass">⛵</span><span>${x}</span></li>`).join('');
+}
+$$('[data-shipbtn]').forEach(b=>b.addEventListener('click',()=>setShip(b.dataset.shipbtn)));
+setShip('erebus');
+
+/* ---------- 5. Timeline ---------- */
+const tlItems=$$('.tl-item'); let tlPhase='all';
+$$('button[data-phase]').forEach(b=>b.addEventListener('click',()=>{
+  tlPhase=b.dataset.phase;
+  $$('button[data-phase]').forEach(x=>x.classList.toggle('on',x===b));
+  tlItems.forEach(i=>i.style.display=(tlPhase==='all'||i.dataset.phase===tlPhase)?'':'none');
+  const first=tlItems.find(i=>i.style.display!=='none'); if(first) setTL(first);
+  updateTL();
+}));
+const tlIO=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)setTL(e.target);});},{rootMargin:'-45% 0px -45% 0px'});
+tlItems.forEach(i=>tlIO.observe(i));
+function setTL(el){
+  tlItems.forEach(i=>i.classList.toggle('on',i===el));
+  $('#tlYear').textContent=el.dataset.year; $('#tlDate').textContent=el.dataset.date; $('#tlTitle').textContent=el.dataset.title;
+  $('#tlYear').classList.remove('fadein'); void $('#tlYear').offsetWidth; $('#tlYear').classList.add('fadein');
+}
+function updateTL(){
+  const vis=tlItems.filter(i=>i.style.display!=='none');
+  const first=vis[0], last=vis[vis.length-1];
+  if(!first||!last){$('#tlCount').textContent='00 / 00';return;}
+  const r1=first.getBoundingClientRect(), r2=last.getBoundingClientRect();
+  const p=Math.max(0,Math.min(1,(innerHeight*.5-r1.top)/(r2.bottom-r1.top)));
+  $('#tlBar').style.height=Math.round(p*100)+'%';
+  let cur=vis[0]; vis.forEach(i=>{if(i.getBoundingClientRect().top<innerHeight*.5)cur=i;});
+  $('#tlCount').textContent=String(vis.indexOf(cur)+1).padStart(2,'0')+' / '+String(vis.length).padStart(2,'0');
+}
+let tlRaf; addEventListener('scroll',()=>{cancelAnimationFrame(tlRaf);tlRaf=requestAnimationFrame(updateTL);},{passive:true});
+updateTL();
+
+/* ---------- 6. Arctic map (SVG) ---------- */
+const W=1200,H=800,LON0=-128,LON1=-48,LAT0=78,LAT1=65;
+const px=lon=>((lon-LON0)/(LON1-LON0))*W, py=lat=>((LAT0-lat)/(LAT0-LAT1))*H;
+const poly=p=>p.map(([lo,la])=>`${px(lo)},${py(la)}`).join(' ');
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+const COASTS=[
+  {n:'Greenland',p:[[-52,65.5],[-53.6,67.5],[-53.2,69.4],[-55,71.4],[-56.5,73],[-58.5,74.8],[-62,76.4],[-67,77.6],[-72,78.4],[-45,78.4],[-45,65.5]]},
+  {n:'Baffin Island',p:[[-80,73.4],[-76.5,73.2],[-73,72.2],[-69,70.8],[-65.5,69],[-62.5,67.2],[-64.5,65.5],[-73,65.5],[-77.5,67.6],[-79.5,69.4],[-77.5,70.6],[-80.5,71.4],[-83.5,72.6]]},
+  {n:'Devon Island',p:[[-91.8,75.6],[-88,75.9],[-83,75.7],[-80.2,75.2],[-82.5,74.5],[-87,74.4],[-91.5,74.6],[-91.6,74.9]]},
+  {n:'Cornwallis',p:[[-96.2,75.5],[-93.6,75.4],[-93,74.8],[-94.6,74.6],[-96.2,74.9]]},
+  {n:'Somerset',p:[[-95.4,74],[-92.2,74],[-91.6,72.6],[-93.6,71.8],[-95.6,72.1],[-96.2,73.1]]},
+  {n:'Boothia',p:[[-95.4,71.7],[-92.6,71.4],[-92,70],[-94,69.2],[-96.2,69.5],[-97,70.6]]},
+  {n:'Prince of Wales',p:[[-100.4,73.6],[-97.2,73.3],[-97.6,72.2],[-98.2,71.2],[-99.8,71.6],[-101.2,72.6]]},
+  {n:'King William',p:[[-99.4,69.65],[-97.6,69.75],[-96.4,69.2],[-96.1,68.6],[-97.4,68.35],[-98.9,68.8],[-99.6,69.2]]},
+  {n:'Victoria',p:[[-110,73.6],[-104.5,73.2],[-102.6,72],[-104.2,71],[-106.5,69.6],[-110.5,68.9],[-115,69.6],[-118,71.4],[-118,73.6]]},
+  {n:'Mainland',p:[[-128,70],[-120,69.4],[-115,68.1],[-110,68.3],[-105,68.6],[-101.5,68.1],[-98.5,68],[-95,68.2],[-92,68.6],[-88.5,68.4],[-86,67.4],[-85,65],[-128,65]]}
+];
+const ISLAND_LABELS=[['GREENLAND',-51.5,72.4,11],['BAFFIN ISLAND',-73,69.6,11],['DEVON I.',-87,75.2,11],['CORNWALLIS I.',-94.6,75.1,9],['SOMERSET I.',-93.2,72.6,9],['PRINCE OF WALES I.',-99.4,72.5,9],['VICTORIA I.',-110,71.4,11],['KING WILLIAM I.',-97.1,68.85,9],['BOOTHIA',-94.4,70.5,9],['MAINLAND CANADA',-110,67.2,11]];
+const SEA_LABELS=[['Baffin Bay',-64,72.2,0],['Lancaster Sound',-85.5,73.5,-3],['Peel Strait',-96.6,73.6,74],['Victoria Strait',-102.4,70.4,-58]];
+const WP=[
+  {id:'disko',name:'Disko Bay, Greenland',lat:69.3,lon:-53.6,date:'July 1845',L:['route'],k:'port',g:'⚑',c:'#8ec2da',t:'The last anchorage. Here the last letters home were written, and five sick or surplus men were sent back to England aboard transport ships. Of the 134, 129 remain.'},
+  {id:'whalers',name:'Meeting the whalers',lat:74.8,lon:-66.2,date:'late July 1845',L:['route'],k:'site',g:'⚓',c:'#a9bcc7',t:'The whalers Prince of Wales and Enterprise see both ships in Baffin Bay. Officers come aboard, play the barrel organ, joke. These are the last Europeans to see the expedition alive.'},
+  {id:'lancaster',name:'Lancaster Sound',lat:74.2,lon:-84,date:'August 1845',L:['route'],k:'site',g:'⚓',c:'#a9bcc7',t:'The gateway to the Northwest Passage. Beyond lay waters on no chart. Orders required them to go south and west toward Bering Strait.'},
+  {id:'beechey',name:'Beechey Island',lat:74.72,lon:-91.85,date:'winter 1845–1846',L:['route','search'],k:'winter',g:'❄',c:'#8ec2da',t:'The first winter. Three stone headstones: John Torrington, John Hartnell, William Braine. Also traces of a workshop and hundreds of opened tins. In 1984–1986 the bodies were exhumed and studied.'},
+  {id:'wellington',name:'Wellington Channel',lat:76.4,lon:-93.2,date:'autumn 1845',L:['route'],k:'site',g:'⚓',c:'#a9bcc7',t:'According to the 1847 note, the ships ascended north to 77° N and returned along the west shore of Cornwallis Island.'},
+  {id:'peel',name:'Peel Strait',lat:73,lon:-96.9,date:'summer 1846',L:['route'],k:'site',g:'⚓',c:'#a9bcc7',t:'The narrow passage between Somerset Island and Prince of Wales Island. It leads directly to King William Island — and is almost always choked with multi-year ice.'},
+  {id:'beset',name:'The ships beset in ice',lat:70.08,lon:-98.38,date:'12 September 1846',L:['route'],k:'ice',g:'≈',c:'#8ec2da',t:'70°05′ N, 98°23′ W. Twenty miles from open water they might have reached in days. The ice will never release the ships: nineteen months of drift.'},
+  {id:'victory',name:'Victory Point',lat:69.63,lon:-98.68,date:'25 April 1848',L:['route','search'],k:'note',g:'▤',c:'#c9973f',t:'In a stone cairn was found the only written record of the expedition — an Admiralty form with the 1847 entry and a note in the margin dated 25 April 1848. Found by McClintock in 1859.'},
+  {id:'erebusbay',name:'Erebus Bay · the boat',lat:69.15,lon:-99.25,date:'May 1859 (discovery)',L:['search'],k:'death',g:'✝',c:'#b4483c',t:'McClintock finds a heavy ship\'s boat on a sledge, turned bow-first back to the north. Inside: two skeletons, guns, chocolate, tea, toothbrushes, books. Not an ounce of food that could have been carried.'},
+  {id:'terrorwreck',name:'Wreck of Terror',lat:69.05,lon:-99.32,date:'3 September 2016',L:['modern'],k:'wreck',g:'⛵',c:'#c9973f',t:'Terror Bay, about 21–24 m deep. The ship stands upright, cabin windows intact, glass in place, dishes in the cupboards. The place was indicated by Inuit — Sammy Kogvik and members of the Nattilik Heritage Society.'},
+  {id:'erebuswreck',name:'Wreck of Erebus',lat:68.23,lon:-98.93,date:'2 September 2014',L:['modern'],k:'wreck',g:'⛵',c:'#c9973f',t:'Wilmot and Crampton Bay, in only 11 metres of water. Found by the Arctic Research Foundation; Inuit accounts collected by Louie Kamookak were crucial. Hundreds of artefacts have since been raised.'},
+  {id:'starvation',name:'Starvation Cove',lat:68.57,lon:-99.28,date:'1848–1850 (?)',L:['route','search'],k:'death',g:'✝',c:'#b4483c',t:'Adelaide Peninsula. Inuit told John Rae of thirty or forty bodies on the shore, of a tent, and of kettles bearing traces of terrible hunger.'},
+  {id:'backriver',name:'Back River · the goal',lat:67.4,lon:-95,date:'the goal, April 1848',L:['route','search'],k:'site',g:'⚓',c:'#a9bcc7',t:'The nearest point of safety — a Hudson\'s Bay Company post some 400 km across tundra, ice and rock. None of the 105 reached it.'},
+  {id:'gjoa',name:'Gjoa Haven',lat:68.63,lon:-95.85,date:'today',L:['modern'],k:'town',g:'⌂',c:'#7f9270',t:'An Inuit community on King William Island. The Nattilik Heritage Centre works here, expanded in 2025: objects raised from Erebus are returned to this place.'}
+];
+const ROUTE=['disko','whalers','lancaster','beechey','wellington','peel','beset','victory','erebusbay','starvation'];
+const LEGEND=[['⚑','Anchorage','#8ec2da'],['❄','Wintering','#8ec2da'],['≈','Ice','#8ec2da'],['▤','The note','#c9973f'],['⛵','Wrecks','#c9973f'],['✝','Deaths','#b4483c'],['⌂','Community','#7f9270'],['⚓','Waypoint','#a9bcc7']];
+$('#legend').innerHTML=LEGEND.map(l=>`<span><i style="color:${l[2]};font-style:normal">${l[0]}</i>${l[1]}</span>`).join('');
+
+let layer='route', focus='beset';
+function routeD(){
+  const via={wellington:[[-97.2,75.4],[-97.6,74.2]],peel:[[-97,71.5]]};
+  const pts=[]; ROUTE.forEach(id=>{const p=WP.find(x=>x.id===id);if(!p)return;pts.push([p.lon,p.lat]);(via[id]||[]).forEach(v=>pts.push(v));});
+  return pts.map((a,i)=>`${i?'L':'M'}${px(a[0])},${py(a[1])}`).join(' ');
+}
+function svgMap(){
+  const d=routeD(), vis=WP.filter(p=>p.L.includes(layer)), act=vis.find(p=>p.id===focus)||vis[0];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Schematic map of Arctic Canada with the route of the Franklin Expedition">`;
+  s+=`<defs><linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1a25"/><stop offset="1" stop-color="#081218"/></linearGradient><linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#162b38"/><stop offset="1" stop-color="#102129"/></linearGradient><pattern id="ice" width="12" height="12" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="12" stroke="#8ec2da" stroke-width="1.1" opacity=".28"/></pattern><filter id="glow"><feGaussianBlur stdDeviation="5"/></filter></defs>`;
+  s+=`<rect width="${W}" height="${H}" fill="url(#sea)"/>`;
+  s+=`<g stroke="#8ec2da" stroke-opacity=".09">`;
+  [-120,-110,-100,-90,-80,-70,-60,-50].forEach(lo=>s+=`<line x1="${px(lo)}" y1="0" x2="${px(lo)}" y2="${H}"/>`);
+  [66,68,70,72,74,76].forEach(la=>s+=`<line x1="0" y1="${py(la)}" x2="${W}" y2="${py(la)}"/>`);
+  s+=`</g><g fill="#8ec2da" fill-opacity=".42" font-family="IBM Plex Mono,monospace" font-size="11">`;
+  [66,70,74,76].forEach(la=>s+=`<text x="10" y="${py(la)-6}">${la}° N</text>`);
+  [-120,-100,-80,-60].forEach(lo=>s+=`<text x="${px(lo)+6}" y="${H-12}">${Math.abs(lo)}° W</text>`);
+  s+=`</g>`;
+  s+=`<polygon points="${poly([[-103.5,74.4],[-96.4,74.2],[-95.4,71.4],[-97.6,69.7],[-100.4,69.9],[-103.8,71.6]])}" fill="url(#ice)" stroke="#8ec2da" stroke-opacity=".35" stroke-dasharray="6 6"/>`;
+  s+=`<text x="${px(-100.6)}" y="${py(72.9)}" fill="#8ec2da" fill-opacity=".6" font-family="IBM Plex Mono,monospace" font-size="12" letter-spacing="3" text-anchor="middle">MULTI-YEAR ICE</text>`;
+  COASTS.forEach(c=>s+=`<polygon points="${poly(c.p)}" fill="url(#land)" stroke="#5f93ab" stroke-opacity=".55" stroke-width="1.2"/>`);
+  s+=`<g font-family="IBM Plex Mono,monospace" fill="#9fb6c2" fill-opacity=".55" letter-spacing="2">`;
+  ISLAND_LABELS.forEach(l=>s+=`<text x="${px(l[1])}" y="${py(l[2])}" font-size="${l[3]}" text-anchor="middle">${l[0]}</text>`);
+  s+=`</g><g font-family="Playfair Display,serif" font-style="italic" fill="#8ec2da" fill-opacity=".5">`;
+  SEA_LABELS.forEach(l=>s+=`<text x="${px(l[1])}" y="${py(l[2])}" font-size="15" text-anchor="middle" ${l[3]?`transform="rotate(${l[3]} ${px(l[1])} ${py(l[2])})"`:''}>${l[0]}</text>`);
+  s+=`</g>`;
+  if(layer!=='modern'){
+    s+=`<path id="fr" d="${d}" fill="none" stroke="#c9973f" stroke-opacity=".22" stroke-width="6"/><path d="${d}" fill="none" stroke="#c9973f" stroke-width="2" stroke-linecap="round" class="route-dash"/>`;
+    if(!reduce&&layer==='route') s+=`<circle r="5" fill="#e9f1f5" opacity=".9" filter="url(#glow)"><animateMotion dur="26s" repeatCount="indefinite" rotate="auto"><mpath href="#fr"/></animateMotion></circle>`;
+  }
+  vis.forEach(p=>{
+    const x=px(p.lon),y=py(p.lat),on=act&&p.id===act.id;
+    s+=`<g data-point="${p.id}" tabindex="0" role="button" aria-label="${esc(p.name)}, ${esc(p.date)}" style="cursor:pointer"><title>${esc(p.name)} — ${esc(p.date)}</title>`;
+    if(on) s+=`<circle cx="${x}" cy="${y}" r="16" fill="none" stroke="${p.c}" stroke-width="1.5" class="pulse"/>`;
+    s+=`<circle cx="${x}" cy="${y}" r="18" fill="transparent"/><circle class="dot" cx="${x}" cy="${y}" r="${on?13:10}" fill="#050b10" stroke="${p.c}" stroke-width="${on?2:1.3}"/>`;
+    s+=`<text x="${x}" y="${y+5}" text-anchor="middle" font-size="13" fill="${p.c}" style="pointer-events:none" font-family="sans-serif">${p.g}</text>`;
+    if(on){
+      const lw=Math.max(p.name.length*7.6+20,130), flip=x+lw+30>W, bx=flip?x-18-lw:x+18;
+      s+=`<rect x="${bx}" y="${y-13}" width="${lw}" height="26" fill="#050b10" stroke="${p.c}" stroke-opacity=".5" style="pointer-events:none"/><text x="${bx+10}" y="${y+5}" fill="#e9f1f5" font-family="IBM Plex Mono,monospace" font-size="12" style="pointer-events:none">${esc(p.name)}</text>`;
+    }
+    s+=`</g>`;
+  });
+  s+=`<g transform="translate(${W-92},92)" opacity=".65"><circle r="34" fill="none" stroke="#c9973f" stroke-opacity=".5"/><circle r="26" fill="none" stroke="#8ec2da" stroke-opacity=".3" stroke-dasharray="2 4"/><path d="M0,-32 L7,0 L0,32 L-7,0Z" fill="#c9973f" fill-opacity=".85"/><path d="M-32,0 L0,-6 L32,0 L0,6Z" fill="#8ec2da" fill-opacity=".45"/><text x="0" y="-40" text-anchor="middle" fill="#c9973f" font-family="IBM Plex Mono,monospace" font-size="12">N</text></g>`;
+  s+=`<g transform="translate(40,${H-52})"><line x1="0" y1="0" x2="128" y2="0" stroke="#a9bcc7" stroke-width="1.5"/><line x1="0" y1="-5" x2="0" y2="5" stroke="#a9bcc7" stroke-width="1.5"/><line x1="64" y1="-4" x2="64" y2="4" stroke="#a9bcc7"/><line x1="128" y1="-5" x2="128" y2="5" stroke="#a9bcc7" stroke-width="1.5"/><text x="0" y="20" fill="#a9bcc7" fill-opacity=".7" font-family="IBM Plex Mono,monospace" font-size="11">≈ 300 km</text></g>`;
+  s+=`<rect x="6" y="6" width="${W-12}" height="${H-12}" fill="none" stroke="#24404f"/><rect x="14" y="14" width="${W-28}" height="${H-28}" fill="none" stroke="#24404f" stroke-opacity=".5"/>`;
+  if(act) s+=`<text x="${W-24}" y="${H-26}" text-anchor="end" fill="#c9973f" font-family="IBM Plex Mono,monospace" font-size="12" letter-spacing="1.5">${act.lat.toFixed(2)}° N · ${Math.abs(act.lon).toFixed(2)}° W</text>`;
+  return s+'</svg>';
+}
+function renderMap(){
+  const vis=WP.filter(p=>p.L.includes(layer)); if(!vis.some(p=>p.id===focus))focus=vis[0]?.id||null;
+  const act=vis.find(p=>p.id===focus)||vis[0];
+  $('#chart').innerHTML=svgMap();
+  $$('#chart [data-point]').forEach(g=>{
+    const go=()=>{focus=g.dataset.point;renderMap();};
+    g.addEventListener('click',go);
+    g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+  });
+  $('#mapDate').textContent=act?act.date:''; $('#mapName').textContent=act?act.name:'';
+  $('#mapCoord').textContent=act?`${act.lat.toFixed(2)}° N · ${Math.abs(act.lon).toFixed(2)}° W`:'';
+  $('#mapText').textContent=act?act.t:'';
+  $('#mapName').classList.remove('fadein'); void $('#mapName').offsetWidth; $('#mapName').classList.add('fadein');
+  $('#mapListHead').textContent='Layer points · '+vis.length;
+  $('#mapList').innerHTML=vis.map(p=>`<li><button class="${p.id===focus?'on':''}" data-pointbtn="${p.id}"><span>${esc(p.name)}</span><small>${esc(p.date)}</small></button></li>`).join('');
+  $$('[data-pointbtn]').forEach(b=>b.addEventListener('click',()=>{focus=b.dataset.pointbtn;renderMap();}));
+  $$('.layerbtn').forEach(b=>{const on=b.dataset.layer===layer;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);});
+}
+$$('.layerbtn').forEach(b=>b.addEventListener('click',()=>{layer=b.dataset.layer;renderMap();}));
+$$('[data-gomap]').forEach(b=>b.addEventListener('click',()=>{
+  const id=b.dataset.gomap, p=WP.find(x=>x.id===id); if(!p)return;
+  if(!p.L.includes(layer))layer=p.L[0];
+  focus=id; renderMap();
+  document.getElementById('map').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+}));
+renderMap();
+
+/* ---------- 7. The note ---------- */
+const NOTES={
+ 1:['“All well”','The confident line is dated 24 May 1847. Eighteen days later, on 11 June, the commander of the expedition would be dead. We do not know whether he was already ill when Gore signed.'],
+ 2:['An error in the year of the wintering','The text says “having wintered in 1846–7 at Beechey Island,” though the wintering was 1845–46. A slip of a tired hand, haste, or a later correction — it is still argued over.'],
+ 3:['Five leagues north-northwest','About 28 km. This is where, according to Crozier, the abandoned ships lay. No searcher ever found the spot: Erebus lies 130 km to the south, Terror 40 km to the north.'],
+ 4:['9 officers and 15 men','Twenty-four deaths in three years — with full holds and warm cabins. That figure is what keeps the theories of poisoning and disease alive.']
+};
+let curNote='4';
+function setNote(n){
+  curNote=n;
+  $$('[data-notebtn]').forEach(b=>b.classList.toggle('on',b.dataset.notebtn===n));
+  $$('mark[data-note]').forEach(m=>m.classList.toggle('on',m.dataset.note===n));
+  $('#noteNum').textContent=n; $('#noteTitle').textContent=NOTES[n][0]; $('#noteText').textContent=NOTES[n][1];
+  $('#notecard').classList.remove('fadein'); void $('#notecard').offsetWidth; $('#notecard').classList.add('fadein');
+}
+$$('[data-notebtn]').forEach(b=>{b.addEventListener('click',()=>setNote(b.dataset.notebtn));b.addEventListener('mouseenter',()=>setNote(b.dataset.notebtn));});
+$$('mark[data-note]').forEach(m=>{m.addEventListener('mouseenter',()=>setNote(m.dataset.note));m.addEventListener('click',()=>setNote(m.dataset.note));});
+setNote('4');
+$$('button[data-lang]').forEach(b=>b.addEventListener('click',()=>{
+  $$('button[data-lang]').forEach(x=>x.classList.toggle('on',x===b));
+  $$('.paper .body').forEach(x=>x.hidden=x.dataset.lang!==b.dataset.lang);
+  setNote(curNote);
+}));
+$('#marginBtn').addEventListener('click',()=>{
+  const on=!$('#marginBtn').classList.contains('on');
+  $('#marginBtn').classList.toggle('on',on);
+  $$('.paper .margin').forEach(m=>m.classList.toggle('off',!on));
+});
+
+/* ---------- 8. Crew: filters and search ---------- */
+const crewCards=$$('.crew'), crewGrid=$('#crewGrid'), crewEmpty=$('#crewEmpty');
+$('#crewTotal').textContent=crewCards.length;
+let fShip='All', fCat='All', fBadge='', fQuery='';
+function filterCrew(){
+  const q=fQuery.trim().toLowerCase(); let n=0;
+  crewCards.forEach(c=>{
+    const ok=(fShip==='All'||c.dataset.ship===fShip)&&(fCat==='All'||c.dataset.cat===fCat)&&(!fBadge||c.dataset.badge===fBadge)&&(!q||c.dataset.text.toLowerCase().includes(q));
+    c.hidden=!ok; if(ok)n++;
+  });
+  $('#crewFound').textContent=String(n).padStart(2,'0');
+  crewGrid.hidden=n===0; crewEmpty.hidden=n!==0;
+}
+$('#crewSearch').addEventListener('input',e=>{fQuery=e.target.value;filterCrew();});
+$('#crewClear').addEventListener('click',()=>{$('#crewSearch').value='';fQuery='';filterCrew();});
+$$('[data-shipfilter]').forEach(b=>b.addEventListener('click',()=>{fShip=b.dataset.shipfilter;$$('[data-shipfilter]').forEach(x=>x.classList.toggle('on',x===b));filterCrew();}));
+$$('[data-cat]').forEach(b=>b.addEventListener('click',()=>{fCat=b.dataset.cat;$$('[data-cat]').forEach(x=>x.classList.toggle('on',x===b));filterCrew();}));
+$$('[data-badge]').forEach(b=>b.addEventListener('click',()=>{fBadge=fBadge===b.dataset.badge?'':b.dataset.badge;$$('[data-badge]').forEach(x=>x.classList.toggle('on',x.dataset.badge===fBadge));filterCrew();}));
+$('#crewReset').addEventListener('click',()=>{
+  fShip='All';fCat='All';fBadge='';fQuery='';$('#crewSearch').value='';
+  $$('[data-shipfilter],[data-cat],[data-badge]').forEach(x=>x.classList.remove('on'));
+  $$('[data-shipfilter="All"],[data-cat="All"]').forEach(x=>x.classList.add('on'));
+  filterCrew();
+});
+filterCrew();
+
+/* ---------- 9. Provision bars and accordion ---------- */
+const barsIO=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){$$('#bars i').forEach(i=>i.style.width=i.dataset.w+'%');barsIO.disconnect();}});},{threshold:.3});
+barsIO.observe($('#bars'));
+$$('.acc > button').forEach(b=>b.addEventListener('click',()=>{
+  const box=b.parentElement, open=!box.classList.contains('open');
+  $$('.acc').forEach(a=>{a.classList.remove('open');$('.pm',a).textContent='+';$('button',a).setAttribute('aria-expanded','false');});
+  if(open){box.classList.add('open');$('.pm',box).textContent='−';b.setAttribute('aria-expanded','true');}
+}));
+})();
+</script>
+</body>
+</html>
